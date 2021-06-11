@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MenuItemView">
+        <!--标题-->
+        <attr name="menu_title" format="string" />
+        <!--菜单图标-->
+        <attr name="menu_icon" format="reference" />
+
+    </declare-styleable>
+
+
+    <declare-styleable name="UserMenuItemView">
+        <!--标题-->
+        <attr name="title" format="string" />
+        <!--菜单图标-->
+        <attr name="icon" format="reference" />
+
+    </declare-styleable>
+</resources>
