@@ -1,16 +1,14 @@
 package com.zq.owner.ui.housekeeper
 
-import android.util.Log
-import android.view.View
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zq.base.fragment.BaseLazyFragment
 import com.zq.owner.R
 import com.zq.owner.databinding.AppFragmentHousekeeperBinding
 import com.zq.owner.ui.housekeeper.adapter.MessageAdapter
+import com.zq.owner.ui.housekeeper.emotiom.EmotionMainFragment
 import com.zq.owner.ui.housekeeper.model.*
 import com.zq.owner.ui.housekeeper.viewmodel.HouseKeeperViewModel
-import com.zq.owner.utils.EmotionKeyboard
-import com.zq.owner.utils.SoftKeyBoardListener
 
 
 /**
@@ -36,22 +34,6 @@ class HousekeeperFragment :
     private val linearLayoutManager by lazy {
         LinearLayoutManager(context)
     }
-    private val mEmotionKeyboard by lazy {
-        EmotionKeyboard.with(activity)
-    }
-    private val recyclerView by lazy {
-        mDataBind!!.recyclerView
-    }
-    private val mLlMore by lazy {
-        mDataBind!!.llMore
-
-    }
-    private val elEmotion by lazy { mDataBind!!.elEmotion }
-    private val etContent by lazy { mDataBind!!.etContent }
-    private val llContent by lazy { mDataBind!!.llContent }
-    private val flEmotionView by lazy { mDataBind!!.flEmotionView }
-    private val ivEmo by lazy { mDataBind!!.ivEmo }
-    private val ivMore by lazy { mDataBind!!.ivMore }
 
     override fun initView() {
         val recyclerView = mDataBind!!.recyclerView
@@ -60,102 +42,10 @@ class HousekeeperFragment :
         messageAdapter.data = messageList
         mDataBind!!.refreshLayout.setEnableLoadMore(false)
         mDataBind!!.refreshLayout.setOnRefreshListener { loadData() }
-        initKeyboardListener()
-        initEmotionKeyboard()
+
 
     }
 
-    /**
-     * 监听键盘弹出
-     */
-    private fun initKeyboardListener() {
-        activity?.let {
-            SoftKeyBoardListener.setListener(
-                it,
-                object : SoftKeyBoardListener.OnSoftKeyBoardChangeListener {
-                    override fun keyBoardShow(height: Int) {
-                        Log.e("TAG", "keyBoardShow: $height")
-                        mEmotionKeyboard.setSoftInputHeight(height)
-                    }
-
-                    override fun keyBoardHide(height: Int) {
-
-                    }
-                })
-        }
-
-    }
-
-    private fun initEmotionKeyboard() {
-        elEmotion.attachEditText(etContent)
-        mEmotionKeyboard.bindToEditText(etContent)
-        mEmotionKeyboard.bindToContent(llContent)
-        mEmotionKeyboard.setEmotionLayout(flEmotionView)
-        mEmotionKeyboard.bindToEmotionButton(ivEmo, ivMore)
-        mEmotionKeyboard.setOnEmotionButtonOnClickListener { view: View ->
-            when (view.id) {
-                R.id.ivEmo -> {
-                    recyclerView.postDelayed({
-                        recyclerView.smoothScrollToPosition(messageList.size - 1)
-
-                    }, 50)
-
-                    etContent.clearFocus()
-
-                    if (!elEmotion.isShown) {
-                        if (mLlMore.isShown) {
-                            showEmotionLayout()
-                            hideMoreLayout()
-                            return@setOnEmotionButtonOnClickListener true
-                        }
-                    } else if (elEmotion.isShown && !mLlMore.isShown) {
-                        ivEmo.setImageResource(R.mipmap.ic_cheat_emo)
-                        mEmotionKeyboard.hideSoftInput()
-                        return@setOnEmotionButtonOnClickListener false
-                    }
-                    showEmotionLayout()
-                    hideMoreLayout()
-                }
-                R.id.ivMore -> {
-                    recyclerView.postDelayed({
-                        recyclerView.smoothScrollToPosition(messageList.size - 1)
-
-                    }, 50)
-                    etContent.clearFocus()
-                    if (!mLlMore.isShown) {
-                        if (elEmotion.isShown) {
-                            showMoreLayout()
-                            hideEmotionLayout()
-
-                            return@setOnEmotionButtonOnClickListener true
-                        }
-                    }
-                    showMoreLayout()
-                    hideEmotionLayout()
-                }
-            }
-            false
-        }
-    }
-
-    private fun hideEmotionLayout() {
-        elEmotion.visibility = View.GONE
-        ivEmo.setImageResource(R.mipmap.ic_cheat_emo)
-
-    }
-
-    private fun showMoreLayout() {
-        mLlMore.visibility = View.VISIBLE
-    }
-
-    private fun showEmotionLayout() {
-        elEmotion.visibility = View.VISIBLE
-        ivEmo.setImageResource(R.mipmap.ic_cheat_keyboard)
-    }
-
-    private fun hideMoreLayout() {
-        mLlMore.visibility = View.GONE
-    }
 
     override fun initData() {
         mViewModel.listData.observe(this) {
@@ -163,6 +53,24 @@ class HousekeeperFragment :
             messageAdapter.notifyDataSetChanged()
             linearLayoutManager.scrollToPositionWithOffset(it.size, 0)
         }
+        initEmotionMainFragment()
+    }
+
+    /**
+     * 初始化表情面板
+     */
+    fun initEmotionMainFragment() {
+
+        val emotionMainFragment =
+            EmotionMainFragment()
+        emotionMainFragment.bindToContentView(mDataBind!!.llContent)
+        val transaction: FragmentTransaction = childFragmentManager.beginTransaction()
+        // Replace whatever is in thefragment_container view with this fragment,
+        // and add the transaction to the backstack
+        transaction.replace(R.id.fl_emotionview_main, emotionMainFragment)
+        transaction.addToBackStack(null)
+        //提交修改
+        transaction.commit()
     }
 
     private fun loadData() {
@@ -201,5 +109,6 @@ class HousekeeperFragment :
         }
         linearLayoutManager.scrollToPositionWithOffset(messageList.size - 1, 0)
     }
+
 
 }

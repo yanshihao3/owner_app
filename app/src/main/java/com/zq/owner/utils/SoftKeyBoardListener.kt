@@ -15,7 +15,7 @@ import android.view.ViewTreeObserver
  **/
 class SoftKeyBoardListener(activity: Activity) {
     private val rootView = activity.window.decorView//activity的根视图
-    internal var
+    private var
             rootViewVisibleHeight: Int = 0//纪录根视图的显示高度
     private var onSoftKeyBoardChangeListener: OnSoftKeyBoardChangeListener? = null
 
@@ -73,6 +73,7 @@ class SoftKeyBoardListener(activity: Activity) {
     }
 
     companion object {
+        @JvmStatic
         fun setListener(
             activity: Activity, onSoftKeyBoardChangeListener:
             OnSoftKeyBoardChangeListener

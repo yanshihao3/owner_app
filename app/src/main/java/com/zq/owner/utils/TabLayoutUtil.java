@@ -1,12 +1,11 @@
 package com.zq.owner.utils;
 
-import android.telecom.DisconnectCause;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
-import com.zq.base.utils.DensityUtil;
+import com.zq.base.utils.DisplayUtils;
 
 import java.lang.reflect.Field;
 
@@ -23,7 +22,7 @@ public class TabLayoutUtil {
                     //拿到tabLayout的mTabStrip属性
                     LinearLayout mTabStrip = (LinearLayout) tabLayout.getChildAt(0);
 
-                    int dp10 = DensityUtil.dip2px(tabLayout.getContext(), 10);
+                    int dp10 = DisplayUtils.dip2px(tabLayout.getContext(), 10);
 
                     for (int i = 0; i < mTabStrip.getChildCount(); i++) {
                         View tabView = mTabStrip.getChildAt(i);

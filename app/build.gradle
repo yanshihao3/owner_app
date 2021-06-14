@@ -58,8 +58,6 @@ dependencies {
     implementation project(":network")
 
     implementation 'com.github.MZCretin:ExpandableTextView:v1.6.1-x'
-    //表情库
-    implementation 'com.lqr.emoji:library:1.0.2'
 
 
     addComponent 'news'

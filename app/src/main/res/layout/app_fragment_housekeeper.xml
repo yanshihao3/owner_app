@@ -87,94 +87,12 @@
             </com.scwang.smart.refresh.layout.SmartRefreshLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/ivAudio"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:src="@mipmap/ic_cheat_voice" />
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center">
-
-                <EditText
-                    android:id="@+id/etContent"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@null"
-                    android:drawableBottom="@drawable/selector_edit_focus"
-                    android:visibility="visible" />
-
-                <Button
-                    android:id="@+id/btnAudio"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="80px"
-                    android:background="@drawable/shape_session_btn_voice_normal"
-                    android:text="@string/please_to_talk"
-                    android:textColor="@color/gray1"
-                    android:visibility="gone" />
-
-            </RelativeLayout>
-
-            <ImageView
-                android:id="@+id/ivEmo"
-                android:layout_width="70px"
-                android:layout_height="70px"
-                android:layout_margin="10px"
-                android:src="@mipmap/ic_cheat_emo" />
-
-            <ImageView
-                android:id="@+id/ivMore"
-                android:layout_width="70px"
-                android:layout_height="70px"
-                android:layout_marginLeft="10px"
-                android:layout_marginRight="14px"
-                android:src="@mipmap/ic_cheat_add" />
-
-            <Button
-                android:id="@+id/btnSend"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="86px"
-                android:layout_height="70px"
-                android:layout_marginRight="8px"
-                android:background="@drawable/shape_session_btn_send"
-                android:text="@string/send"
-                android:textColor="@color/white"
-                android:textSize="13sp"
-                android:visibility="gone" />
-        </LinearLayout>
-
-
         <FrameLayout
-            android:id="@+id/flEmotionView"
+            android:id="@+id/fl_emotionview_main"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone">
-            <!--表情-->
-            <com.lqr.emoji.EmotionLayout
-                android:id="@+id/elEmotion"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="gone" />
-            <!--其他功能-->
-            <include
-                android:id="@+id/llMore"
-                layout="@layout/app_include_func_layout"
-                android:visibility="gone" />
-        </FrameLayout>
+            android:layout_height="wrap_content" />
+
+
     </LinearLayout>
 
 </layout>

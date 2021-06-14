@@ -18,7 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
 
 import com.zq.base.R;
-import com.zq.base.utils.DensityUtil;
+import com.zq.base.utils.DisplayUtils;
 
 /**
  * 圆形图片
@@ -289,7 +289,7 @@ public class NiceImageView extends AppCompatImageView {
     }
 
     public void setBorderWidth(int borderWidth) {
-        this.borderWidth = DensityUtil.dip2px(context, borderWidth);
+        this.borderWidth = DisplayUtils.dip2px(context, borderWidth);
         calculateRadiiAndRectF(false);
     }
 
@@ -299,7 +299,7 @@ public class NiceImageView extends AppCompatImageView {
     }
 
     public void setInnerBorderWidth(int innerBorderWidth) {
-        this.innerBorderWidth = DensityUtil.dip2px(context, innerBorderWidth);
+        this.innerBorderWidth = DisplayUtils.dip2px(context, innerBorderWidth);
         clearInnerBorderWidth();
         invalidate();
     }
@@ -310,27 +310,27 @@ public class NiceImageView extends AppCompatImageView {
     }
 
     public void setCornerRadius(int cornerRadius) {
-        this.cornerRadius = DensityUtil.dip2px(context, cornerRadius);
+        this.cornerRadius = DisplayUtils.dip2px(context, cornerRadius);
         calculateRadiiAndRectF(false);
     }
 
     public void setCornerTopLeftRadius(int cornerTopLeftRadius) {
-        this.cornerTopLeftRadius = DensityUtil.dip2px(context, cornerTopLeftRadius);
+        this.cornerTopLeftRadius = DisplayUtils.dip2px(context, cornerTopLeftRadius);
         calculateRadiiAndRectF(true);
     }
 
     public void setCornerTopRightRadius(int cornerTopRightRadius) {
-        this.cornerTopRightRadius = DensityUtil.dip2px(context, cornerTopRightRadius);
+        this.cornerTopRightRadius = DisplayUtils.dip2px(context, cornerTopRightRadius);
         calculateRadiiAndRectF(true);
     }
 
     public void setCornerBottomLeftRadius(int cornerBottomLeftRadius) {
-        this.cornerBottomLeftRadius = DensityUtil.dip2px(context, cornerBottomLeftRadius);
+        this.cornerBottomLeftRadius = DisplayUtils.dip2px(context, cornerBottomLeftRadius);
         calculateRadiiAndRectF(true);
     }
 
     public void setCornerBottomRightRadius(int cornerBottomRightRadius) {
-        this.cornerBottomRightRadius = DensityUtil.dip2px(context, cornerBottomRightRadius);
+        this.cornerBottomRightRadius = DisplayUtils.dip2px(context, cornerBottomRightRadius);
         calculateRadiiAndRectF(true);
     }
 

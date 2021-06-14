@@ -7,13 +7,14 @@ import com.zq.base.R
  * 文件名:    DensityUtil
  * @author yanshihao
  */
-object DensityUtil {
+object DisplayUtils {
     /**
      * 获取屏幕宽度（像素）
      *
      * @param context 上下文
      * @return px
      */
+    @JvmStatic
     fun getWith(context: Context): Int {
         val dm = context.resources.displayMetrics
         return dm.widthPixels
@@ -25,6 +26,7 @@ object DensityUtil {
      * @param context 上下文
      * @return px
      */
+    @JvmStatic
     fun getHeight(context: Context): Int {
         val dm = context.resources.displayMetrics
         return dm.heightPixels
@@ -36,6 +38,7 @@ object DensityUtil {
      * @param context 上下文
      * @return px
      */
+    @JvmStatic
     fun getStatusBarHeight(context: Context): Int {
         var statusBarHeight = 0
         val resourceId = context.resources.getIdentifier("status_bar_height", "dimen", "android")
@@ -51,6 +54,7 @@ object DensityUtil {
      * @param context 上下文
      * @return px
      */
+    @JvmStatic
     fun getActionBarHeight(context: Context): Int {
         val values = context.theme.obtainStyledAttributes(intArrayOf(R.attr.actionBarSize))
         val actionBarHeight = values.getDimensionPixelSize(0, 0)
@@ -70,6 +74,7 @@ object DensityUtil {
     /**
      * 根据手机的分辨率从 px(像素) 的单位 转成为 dp
      */
+    @JvmStatic
     fun px2dip(context: Context, pxValue: Float): Int {
         val scale = context.resources.displayMetrics.density
         return (pxValue / scale + 0.5f).toInt()
