@@ -1,5 +1,6 @@
 package com.zq.owner.ui.community
 
+import android.content.Intent
 import coil.load
 import com.youth.banner.adapter.BannerImageAdapter
 import com.youth.banner.holder.BannerImageHolder
@@ -8,6 +9,10 @@ import com.zq.base.fragment.BaseLazyFragment
 import com.zq.owner.R
 import com.zq.owner.ui.community.viewmodel.CommunityViewModel
 import com.zq.owner.databinding.AppFragmentCommunityBinding
+import com.zq.owner.ui.community.complaint.ComplaintActivity
+import com.zq.owner.ui.community.pay.CloudPayActivity
+import com.zq.owner.ui.community.report.ReportActivity
+import com.zq.owner.ui.community.service.ServiceTelephoneActivity
 
 
 class CommunityFragment : BaseLazyFragment<CommunityViewModel, AppFragmentCommunityBinding>() {
@@ -23,6 +28,22 @@ class CommunityFragment : BaseLazyFragment<CommunityViewModel, AppFragmentCommun
     )
 
     override fun initView() {
+        //报事报修
+        mDataBind.itemRepair.setOnClickListener {
+            startActivity(Intent(context, ReportActivity::class.java))
+        }
+        //云缴费
+        mDataBind.itemCloudPay.setOnClickListener {
+            startActivity(Intent(context, CloudPayActivity::class.java))
+        }
+        //服务电话
+        mDataBind.itemService.setOnClickListener {
+            startActivity(Intent(context, ServiceTelephoneActivity::class.java))
+        }
+        //投诉建议
+        mDataBind.itemComplaint.setOnClickListener {
+            startActivity(Intent(context, ComplaintActivity::class.java))
+        }
 
     }
 

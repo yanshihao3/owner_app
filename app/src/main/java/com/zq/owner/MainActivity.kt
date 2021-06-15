@@ -13,8 +13,6 @@ import com.zq.owner.ui.housekeeper.HousekeeperFragment
 import com.zq.owner.ui.notice.NoticeFragment
 import com.zq.owner.ui.service.ServiceFragment
 import com.zq.owner.ui.user.UserFragment
-import com.zq.owner.utils.SoftKeyBoardListener
-import com.zq.owner.utils.SoftKeyBoardListener.OnSoftKeyBoardChangeListener
 import com.zq.owner.viewmodel.MainViewModel
 import q.rorbin.badgeview.QBadgeView
 
@@ -73,11 +71,7 @@ class MainActivity : BaseActivity<MainViewModel, AppActivityMainBinding>() {
             fromFragment = fragCategory
             true
         }
-        immersionBar {
-            keyboardEnable(false)
-            transparentStatusBar()
-            statusBarDarkFont(true, 0.2f)
-        }
+
     }
 
 

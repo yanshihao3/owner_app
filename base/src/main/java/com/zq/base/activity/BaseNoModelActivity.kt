@@ -34,10 +34,25 @@ abstract class BaseNoModelActivity<DB : ViewDataBinding> : AppCompatActivity(), 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        beforeSetContentView()
         mDataBind = DataBindingUtil.setContentView(this, layoutId)
         mDataBind.lifecycleOwner = this
         mActivityContext = this
+        otherInit()
+        initView()
+        initData()
     }
+
+
+    /**
+     * 初始化视图
+     */
+    protected abstract fun initView()
+
+    /**
+     * 初始化数据
+     */
+    protected abstract fun initData()
 
 
     override fun onRefreshEmpty() {
@@ -77,7 +92,25 @@ abstract class BaseNoModelActivity<DB : ViewDataBinding> : AppCompatActivity(), 
         }
     }
 
+    /**
+     * 加载失败重试事件
+     */
     open fun onRetryBtnClick() {
 
     }
+
+    /**
+     * 其他需要做的事情
+     */
+    open fun otherInit() {
+
+    }
+
+    /**
+     * 其他需要做的事情
+     */
+    open fun beforeSetContentView() {
+
+    }
+
 }

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray0"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.community.report.ReportRecordActivity">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/app_include_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/evaluate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/app_record_text_bg_select"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:text="待评价" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/handle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-15dp"
+                android:layout_marginEnd="-15dp"
+                android:layout_toLeftOf="@id/evaluate"
+                android:background="@drawable/app_record_text_bg_normal"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:text="处理中" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/handle"
+                android:background="@drawable/app_record_text_bg_normal"
+                android:paddingLeft="32dp"
+                android:paddingRight="42dp"
+                android:text="全部" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</layout>

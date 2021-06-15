@@ -1,8 +1,8 @@
 package com.zq.base.activity
 
-import android.os.Bundle
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
+import com.gyf.immersionbar.ktx.immersionBar
 import com.hjq.toast.ToastUtils
 import com.zq.base.viewmodel.BaseViewModel
 import com.zq.base.viewmodel.ViewModelFactory
@@ -17,17 +17,17 @@ import java.lang.reflect.ParameterizedType
 abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> :
     BaseNoModelActivity<DB>() {
     protected lateinit var mViewModel: VM
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        performBindView()
-        initObserve()
-        initView()
-        initData()
+
+    override fun beforeSetContentView() {
+        super.beforeSetContentView()
+        initStatusBar()
     }
 
-    abstract fun initData()
-
-    abstract fun initView()
+    override fun otherInit() {
+        super.otherInit()
+        performBindView()
+        initObserve()
+    }
 
 
     open val bindingVariable: Int = 0
@@ -69,5 +69,16 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> :
         }
     }
 
+    /**
+     * 默认的状态栏 ，不需要可以重写
+     */
+
+    open fun initStatusBar() {
+        immersionBar {
+            keyboardEnable(false)
+            transparentStatusBar()
+            statusBarDarkFont(true, 0.2f)
+        }
+    }
 
 }

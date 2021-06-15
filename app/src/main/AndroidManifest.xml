@@ -3,6 +3,10 @@
     package="com.zq.owner">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 读取sd卡 -->
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".application.NewApplication"
@@ -13,20 +17,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mvvm"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".MainActivity" android:windowSoftInputMode="adjustPan">
+        <activity android:name=".ui.service.parking.ParkingActivity"></activity>
+        <activity android:name=".ui.service.express.ExpressActivity" />
+        <activity android:name=".ui.service.questionnaire.QuestionnaireActivity" />
+        <activity android:name=".ui.community.complaint.ComplaintActivity" />
+        <activity android:name=".ui.community.service.ServiceTelephoneActivity" />
+        <activity android:name=".ui.community.pay.CloudPayActivity" />
+        <activity android:name=".ui.community.pay.PayActivity" />
+        <activity android:name=".ui.community.report.ReportRecordActivity" />
+        <activity android:name=".ui.community.report.ReportActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TestActivity" android:windowSoftInputMode="adjustPan">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+        <activity
+            android:name=".TestActivity"
+            android:windowSoftInputMode="adjustPan">
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
     </application>
 

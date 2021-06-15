@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.zq.owner.ui.community.pay.viewmodel.CloudViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:fitsSystemWindows="true"
+        android:layout_height="match_parent"
+        tools:context=".ui.community.pay.CloudPayActivity">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/app_include_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.zq.owner.view.MenuItemView
+            android:id="@+id/item_heating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/item_gas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:menu_icon="@mipmap/ic_launcher"
+            app:menu_title="供暖费" />
+
+
+        <com.zq.owner.view.MenuItemView
+            android:id="@+id/item_gas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/item_cable_tv"
+            app:layout_constraintRight_toLeftOf="@+id/item_cable_tv"
+            app:layout_constraintStart_toEndOf="@+id/item_heating"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:menu_icon="@mipmap/ic_launcher"
+            app:menu_title="燃气费" />
+
+
+        <com.zq.owner.view.MenuItemView
+            android:id="@+id/item_cable_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/item_water"
+            app:layout_constraintRight_toLeftOf="@+id/item_water"
+            app:layout_constraintStart_toEndOf="@+id/item_gas"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:menu_icon="@mipmap/ic_launcher"
+            app:menu_title="有线电视" />
+
+        <com.zq.owner.view.MenuItemView
+            android:id="@+id/item_water"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/item_cable_tv"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:menu_icon="@mipmap/ic_launcher"
+            app:menu_title="水费" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

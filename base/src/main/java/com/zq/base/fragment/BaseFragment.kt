@@ -16,7 +16,7 @@ import java.lang.reflect.ParameterizedType
  * @author: 闫世豪
  * @create: 2021-03-03 17:34
  */
-abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding?> :
+abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> :
     BaseNoModelFragment<DB>() {
     protected lateinit var mViewModel: VM
 
@@ -33,7 +33,7 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding?> :
         container: ViewGroup?
     ) {
         super.initDataBinding(inflater, layoutId, container)
-        mDataBind!!.lifecycleOwner = this
+        mDataBind.lifecycleOwner = this
         performBindView()
         initObserve()
     }
@@ -44,9 +44,9 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding?> :
     private fun performBindView() {
         createViewModel()
         if (bindingVariable > 0) {
-            mDataBind!!.setVariable(bindingVariable, mViewModel)
+            mDataBind.setVariable(bindingVariable, mViewModel)
         }
-        mDataBind!!.executePendingBindings()
+        mDataBind.executePendingBindings()
     }
 
     /**

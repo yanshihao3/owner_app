@@ -1,8 +1,10 @@
 package com.zq.owner.application
 
+
 import com.zq.base.BaseApplication
 import com.zq.network.ServerApi
 import com.zq.owner.BuildConfig
+
 
 /**
  * @program: mvvm
@@ -18,5 +20,6 @@ class NewApplication : BaseApplication() {
         super.onCreate()
         setDebug(BuildConfig.DEBUG)
         ServerApi.getInstance().init(this)
+
     }
 }

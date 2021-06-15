@@ -14,7 +14,7 @@ android {
         versionName rootProject.android.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary=true
+        vectorDrawables.useSupportLibrary = true
 
     }
 
@@ -31,7 +31,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures{
+    buildFeatures {
         dataBinding = true
     }
 }
@@ -58,8 +58,12 @@ dependencies {
     implementation project(":network")
 
     implementation 'com.github.MZCretin:ExpandableTextView:v1.6.1-x'
-
-
+    //时间选择器
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+    //图片选择框架
+    implementation 'com.yuyh.imgsel:library:2.1.0'
+    //图片展示库
+    implementation 'com.github.wanglu1209:PhotoViewer:0.50'
     addComponent 'news'
     addComponent 'user'
 }

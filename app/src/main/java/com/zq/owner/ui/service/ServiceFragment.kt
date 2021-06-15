@@ -54,12 +54,12 @@ class ServiceFragment : BaseLazyFragment<ServiceViewModel, AppFragmentServiceBin
     }
 
     override fun initView() {
-        mDataBind!!.recyclerView.layoutManager = layoutManager1
-        mDataBind!!.recyclerView.adapter = adapter1
-        mDataBind!!.recyclerView.addItemDecoration(GridSpaceItemDecoration(24))
-        mDataBind!!.recyclerView2.layoutManager = layoutManager2
-        mDataBind!!.recyclerView2.adapter = adapter2
-        mDataBind!!.recyclerView2.addItemDecoration(GridSpaceItemDecoration(24))
+        mDataBind.recyclerView.layoutManager = layoutManager1
+        mDataBind.recyclerView.adapter = adapter1
+        mDataBind.recyclerView.addItemDecoration(GridSpaceItemDecoration(24))
+        mDataBind.recyclerView2.layoutManager = layoutManager2
+        mDataBind.recyclerView2.adapter = adapter2
+        mDataBind.recyclerView2.addItemDecoration(GridSpaceItemDecoration(24))
 
     }
 

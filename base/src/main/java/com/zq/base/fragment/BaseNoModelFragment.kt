@@ -26,10 +26,10 @@ import com.zq.base.loadsir.LoadingCallback
  * @author: 闫世豪
  * @create: 2021-03-03 17:34
  */
-abstract class BaseNoModelFragment<DB : ViewDataBinding?> : Fragment(), IBasePagingView,
+abstract class BaseNoModelFragment<DB : ViewDataBinding> : Fragment(), IBasePagingView,
     SimpleImmersionOwner {
     private var mLoadService: LoadService<*>? = null
-    protected var mDataBind: DB? = null
+    protected lateinit var mDataBind: DB
     protected var mContext: Context? = null
     private var mActivity: FragmentActivity? = null
     private val mSimpleImmersionProxy by lazy {
@@ -48,7 +48,7 @@ abstract class BaseNoModelFragment<DB : ViewDataBinding?> : Fragment(), IBasePag
         savedInstanceState: Bundle?
     ): View? {
         initDataBinding(inflater, layoutId, container)
-        return mDataBind!!.root
+        return mDataBind.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -86,9 +86,7 @@ abstract class BaseNoModelFragment<DB : ViewDataBinding?> : Fragment(), IBasePag
     protected abstract fun initData()
     override fun onDestroy() {
         super.onDestroy()
-        if (mDataBind != null) {
-            mDataBind!!.unbind()
-        }
+        mDataBind.unbind()
         mContext = null
         mActivity = null
         mSimpleImmersionProxy.onDestroy();
