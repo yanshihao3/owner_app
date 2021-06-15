@@ -10,9 +10,6 @@ import com.zq.owner.R;
 
 
 /**
- * Created by zejian
- * Time  16/1/7 上午10:26
- * Email shinezejian@163.com
  * Description:
  */
 public class Fragment1 extends BaseFragment {

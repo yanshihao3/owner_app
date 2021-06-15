@@ -11,9 +11,6 @@ import androidx.viewpager.widget.ViewPager;
 import java.util.List;
 
 /**
- * Created by zejian
- * Time  16/1/7 下午4:09
- * Email shinezejian@163.com
  * Description: EmotiomComplateFragment界面Viewpager数据适配器
  */
 public class EmotionPagerAdapter extends PagerAdapter {

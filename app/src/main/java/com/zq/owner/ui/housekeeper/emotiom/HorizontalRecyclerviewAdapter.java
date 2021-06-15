@@ -18,7 +18,6 @@ import java.util.List;
 
 
 /**
- * Created by zejian
  */
 public class HorizontalRecyclerviewAdapter extends RecyclerView.Adapter<HorizontalRecyclerviewAdapter.ViewHolder> {
 

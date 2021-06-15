@@ -5,9 +5,6 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 /**
- * Created by zejian
- * Time  16/1/7 上午11:40
- * Email shinezejian@163.com
  * Description:产生fragment的工厂类
  */
 public class FragmentFactory {
