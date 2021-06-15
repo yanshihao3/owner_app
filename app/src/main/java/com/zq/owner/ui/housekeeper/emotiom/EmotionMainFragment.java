@@ -52,6 +52,11 @@ public class EmotionMainFragment extends Fragment {
 
     List<Fragment> fragments = new ArrayList<>();
 
+    private EmotionShowListener emotionShowListener;
+
+    public void setEmotionShowListener(EmotionShowListener emotionShowListener) {
+        this.emotionShowListener = emotionShowListener;
+    }
 
     /**
      * 创建与Fragment对象关联的View视图时调用
@@ -69,7 +74,6 @@ public class EmotionMainFragment extends Fragment {
                 .setEmotionView(rootView.findViewById(R.id.ll_emotion_layout))//绑定表情面板
                 .bindToContent(contentView)//绑定内容view
                 .bindToEditText(!isBindToBarEditText ? ((EditText) contentView) : ((EditText) rootView.findViewById(R.id.bar_edit_text)))//判断绑定那种EditView
-                .bindToEmotionButton(rootView.findViewById(R.id.emotion_button))//绑定表情按钮
                 .build();
         initListener();
         initDatas();
@@ -116,9 +120,19 @@ public class EmotionMainFragment extends Fragment {
         } else {
             bar_edit_text.setVisibility(View.VISIBLE);
             bar_image_add_btn.setVisibility(View.VISIBLE);
-            bar_btn_send.setVisibility(View.VISIBLE);
+            bar_btn_send.setVisibility(View.GONE);
             rl_editbar_bg.setBackgroundResource(R.drawable.shape_bg_reply_edittext);
         }
+        rootView.findViewById(R.id.emotion_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mEmotionKeyboard.switchEmotion();
+                if (emotionShowListener != null) {
+                    emotionShowListener.emotionShow();
+                }
+            }
+        });
+
     }
 
     /**
@@ -212,4 +226,6 @@ public class EmotionMainFragment extends Fragment {
     public boolean isInterceptBackPress() {
         return mEmotionKeyboard.interceptBackPress();
     }
+
+
 }

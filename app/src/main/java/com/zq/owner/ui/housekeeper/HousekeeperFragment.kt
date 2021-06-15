@@ -64,6 +64,9 @@ class HousekeeperFragment :
         val emotionMainFragment =
             EmotionMainFragment()
         emotionMainFragment.bindToContentView(mDataBind!!.llContent)
+        emotionMainFragment.setEmotionShowListener {
+            linearLayoutManager.scrollToPositionWithOffset(messageList.size - 1, 0)
+        }
         val transaction: FragmentTransaction = childFragmentManager.beginTransaction()
         // Replace whatever is in thefragment_container view with this fragment,
         // and add the transaction to the backstack

@@ -27,22 +27,15 @@
             android:paddingRight="8dp"
             android:paddingBottom="6dp">
 
-            <ImageView
-                android:id="@+id/bar_emotion_btn"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:clickable="true"
-                android:src="@drawable/ic_emotion"
-                android:visibility="gone" />
 
             <ImageView
-                android:id="@+id/bar_image_add_btn"
+                android:id="@+id/bar_image_audio"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:clickable="true"
                 android:scaleType="centerCrop"
                 android:src="@mipmap/ic_plus"
-                android:visibility="gone" />
+                android:visibility="visible" />
 
             <LinearLayout
                 android:id="@+id/rl_editbar_bg"
@@ -65,26 +58,34 @@
                     android:minHeight="36dp"
                     android:textSize="16sp" />
 
-                <ImageView
-                    android:id="@+id/emotion_button"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:clickable="true"
-                    android:src="@mipmap/ic_emotion" />
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/emotion_button"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:clickable="true"
+                android:src="@mipmap/ic_emotion" />
+
+            <ImageView
+                android:id="@+id/bar_image_add_btn"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:clickable="true"
+                android:src="@mipmap/ic_plus" />
 
             <Button
                 android:id="@+id/bar_btn_send"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape_bg_button_reply"
-                android:text="发送"
-                android:paddingLeft="6dp"
                 android:minWidth="0dp"
                 android:minHeight="0dp"
-                android:paddingBottom="3dp"
+                android:paddingLeft="6dp"
                 android:paddingTop="3dp"
                 android:paddingRight="6dp"
+                android:paddingBottom="3dp"
+                android:text="发送"
                 android:textColor="@color/white"
                 android:visibility="gone" />
         </LinearLayout>

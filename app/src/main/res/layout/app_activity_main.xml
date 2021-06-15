@@ -32,6 +32,5 @@
             app:labelVisibilityMode="labeled"
             app:menu="@menu/bottom_menu" />
 
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

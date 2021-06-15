@@ -87,33 +87,24 @@ public class EmotionKeyboard {
         return this;
     }
 
-    /**
-     * 绑定表情按钮
-     *
-     * @param emotionButton
-     * @return
-     */
-    public EmotionKeyboard bindToEmotionButton(View emotionButton) {
-        emotionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mEmotionLayout.isShown()) {// 显示键盘
-                    lockContentHeight();//显示软件盘时，锁定内容高度，防止跳闪。
-                    hideEmotionLayout(true);//隐藏表情布局，显示软件盘
-                    unlockContentHeightDelayed();//软件盘显示后，释放内容高度
-                } else {
-                    if (isSoftInputShown()) {//键盘切换到表情
-                        lockEmotionContentHeight();
-                        showEmotionLayout();
-                        unlockContentHeightDelayed();
-                    } else {//两者都没显示，直接显示表情布局
-                        showEmotionLayout();
-                    }
-                }
-            }
 
-        });
-        return this;
+    /**
+     * 切换键盘
+     */
+    public void switchEmotion() {
+        if (mEmotionLayout.isShown()) {// 显示键盘
+            lockContentHeight();//显示软件盘时，锁定内容高度，防止跳闪。
+            hideEmotionLayout(true);//隐藏表情布局，显示软件盘
+            unlockContentHeightDelayed();//软件盘显示后，释放内容高度
+        } else {
+            if (isSoftInputShown()) {//键盘切换到表情
+                lockEmotionContentHeight();
+                showEmotionLayout();
+                unlockContentHeightDelayed();
+            } else {//两者都没显示，直接显示表情布局
+                showEmotionLayout();
+            }
+        }
     }
 
     private void lockEmotionContentHeight() {
