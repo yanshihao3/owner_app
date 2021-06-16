@@ -3,8 +3,10 @@ package com.zq.owner.utils
 import android.content.ContentValues
 import android.content.Context
 import android.net.Uri
+import android.os.Environment
 import android.provider.MediaStore
 import java.io.File
+
 
 /**
  * @program: owner_app
@@ -41,5 +43,48 @@ object FileUtils {
             }
         }
     }
+
+    /**
+     * 获取app缓存路径
+     *
+     * @param context Application Context
+     * @return 缓存路径
+     */
+    public fun getCacheDir(context: Context): String {
+        return if (Environment.MEDIA_MOUNTED == Environment.getExternalStorageState() || !Environment.isExternalStorageRemovable()) {
+            //外部存储可用
+            val file = context.externalCacheDir
+            if (null == file) {
+                context.cacheDir.path
+            } else {
+                file.path
+            }
+        } else {
+            //外部存储不可用
+            context.cacheDir.path
+        }
+    }
+
+    /**
+     * 获取app文件路径
+     *
+     * @param context Application Context
+     * @return app文件路径
+     */
+    fun getFilesDir(context: Context): String {
+        return if (Environment.MEDIA_MOUNTED == Environment.getExternalStorageState() || !Environment.isExternalStorageRemovable()) {
+            //外部存储可用
+            val file = context.getExternalFilesDir(null)
+            if (null == file) {
+                context.filesDir.path
+            } else {
+                file.path
+            }
+        } else {
+            //外部存储不可用
+            context.filesDir.path
+        }
+    }
+
 
 }

@@ -1,18 +1,21 @@
 package com.zq.owner.ui.community
 
 import android.content.Intent
+import android.util.Log
 import coil.load
+import com.billy.cc.core.component.CC
 import com.youth.banner.adapter.BannerImageAdapter
 import com.youth.banner.holder.BannerImageHolder
 import com.youth.banner.indicator.CircleIndicator
 import com.zq.base.fragment.BaseLazyFragment
 import com.zq.owner.R
-import com.zq.owner.ui.community.viewmodel.CommunityViewModel
 import com.zq.owner.databinding.AppFragmentCommunityBinding
 import com.zq.owner.ui.community.complaint.ComplaintActivity
 import com.zq.owner.ui.community.pay.CloudPayActivity
 import com.zq.owner.ui.community.report.ReportActivity
 import com.zq.owner.ui.community.service.ServiceTelephoneActivity
+import com.zq.owner.ui.community.viewmodel.CommunityViewModel
+import com.zq.owner.ui.face.FaceActivity
 
 
 class CommunityFragment : BaseLazyFragment<CommunityViewModel, AppFragmentCommunityBinding>() {
@@ -45,6 +48,20 @@ class CommunityFragment : BaseLazyFragment<CommunityViewModel, AppFragmentCommun
             startActivity(Intent(context, ComplaintActivity::class.java))
         }
 
+        //测试登录
+        mDataBind.itemCommunity.setOnClickListener {
+            CC.obtainBuilder("ComponentUser")
+                .setActionName("login")
+                .build()
+                .callAsyncCallbackOnMainThread { cc, result ->
+                    Log.e("tag", "initView: ${result.toString()}")
+                }
+        }
+
+        //测试人脸认证
+        mDataBind.itemHouse.setOnClickListener {
+            startActivity(Intent(context, FaceActivity::class.java))
+        }
     }
 
     override fun initData() {
@@ -70,3 +87,4 @@ class CommunityFragment : BaseLazyFragment<CommunityViewModel, AppFragmentCommun
     }
 
 }
+

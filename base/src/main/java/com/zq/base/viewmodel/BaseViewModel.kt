@@ -1,6 +1,5 @@
 package com.zq.base.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.*
 import com.zq.base.BaseApplication
 import com.zq.base.event.Message

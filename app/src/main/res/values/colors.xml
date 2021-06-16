@@ -43,4 +43,19 @@
     <color name="bg_indicator_point_normal">#D8D8D8</color>
     <color name="bg_indicator_point_selected">#A6A6A6</color>
 
+    <!--提示语背景颜色-->
+    <color name="colorAccent">#80000000</color>
+    <!--布局上的文字-->
+    <color name="textColor">#494949</color>
+    <!--外面圈背景颜色-->
+    <color name="circleBg">#DFE7EB</color>
+    <!--外面圈背景颜色-->
+    <color name="viewBgWhite">#FFFFFFFF</color>
+
+    <!--外面圆弧背景渐变颜色-->
+    <color name="arc_color_1">#0094FF</color>
+    <!--外面圆弧背景渐变颜色-->
+    <color name="arc_color_2">#3CA9FF</color>
+
+
 </resources>
