@@ -6,27 +6,27 @@ import com.zq.base.decoration.SpacesItemDecoration
 import com.zq.base.fragment.BaseLazyFragment
 import com.zq.owner.R
 import com.zq.owner.databinding.AppFragmentNewsBinding
-import com.zq.owner.ui.notice.adapter.NewsAdapter
-import com.zq.owner.ui.notice.entity.NewsEntity
+import com.zq.owner.ui.notice.adapter.MessageAdapter
+import com.zq.owner.ui.notice.entity.MessageEntity
 import com.zq.owner.ui.notice.viewmodel.NewsViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
-class NewsFragment : BaseLazyFragment<NewsViewModel, AppFragmentNewsBinding>() {
+class MessageFragment : BaseLazyFragment<NewsViewModel, AppFragmentNewsBinding>() {
 
     private val newsAdapter by lazy {
-        NewsAdapter()
+        MessageAdapter()
     }
 
 
-    private val listData = mutableListOf<NewsEntity>()
+    private val listData = mutableListOf<MessageEntity>()
 
     override fun onFragmentFirstVisible() {
-        listData.add(NewsEntity())
-        listData.add(NewsEntity())
-        listData.add(NewsEntity())
-        listData.add(NewsEntity())
+        listData.add(MessageEntity())
+        listData.add(MessageEntity())
+        listData.add(MessageEntity())
+        listData.add(MessageEntity())
         newsAdapter.data = listData
         newsAdapter.notifyDataSetChanged()
     }

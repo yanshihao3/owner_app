@@ -64,15 +64,15 @@ dependencies {
 
     api "com.squareup.retrofit2:retrofit:2.9.0"
     api "com.squareup.retrofit2:converter-gson:2.9.0"
-
-    api 'com.hjq:toast:8.8'
+    //吐司
+    api 'com.github.getActivity:ToastUtils:9.2'
     //腾讯x5
     api 'com.tencent.tbs.tbssdk:sdk:43903'
     //刷新库
     api 'com.scwang.smart:refresh-layout-kernel:2.0.1'      //核心必须依赖
     api 'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头
     api 'com.scwang.smart:refresh-footer-classics:2.0.1'    //经典加载
-    api  'com.scwang.smart:refresh-header-material:2.0.3'    //谷歌刷新头
+    api 'com.scwang.smart:refresh-header-material:2.0.3'    //谷歌刷新头
 
 
     api 'me.jessyan:autosize:1.2.1'

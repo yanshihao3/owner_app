@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
-import com.gyf.immersionbar.ktx.immersionBar
 import com.zq.base.activity.BaseActivity
 import com.zq.owner.databinding.AppActivityMainBinding
 import com.zq.owner.ui.community.CommunityFragment
@@ -23,32 +22,35 @@ class MainActivity : BaseActivity<MainViewModel, AppActivityMainBinding>() {
     private val mHomeFragment by lazy {
         CommunityFragment()
     }
-    private val mServiceFragment = ServiceFragment()
-    private val mHousekeeperFragment = HousekeeperFragment()
-    private val mNoticeFragment = NoticeFragment()
-    private val mUserFragment = UserFragment()
+    private val mServiceFragment by lazy {
+        ServiceFragment()
+    }
+    private val mHousekeeperFragment by lazy {
+        HousekeeperFragment()
+    }
+    private val mNoticeFragment by lazy {
+        NoticeFragment()
+    }
+    private val mUserFragment by lazy {
+        UserFragment()
+    }
 
     private var fromFragment: Fragment = mHomeFragment
 
-    private fun switchFragment(from: Fragment?, to: Fragment) {
+
+    private fun switchFragment(from: Fragment, to: Fragment) {
         if (from !== to) {
-            val manger: FragmentManager = supportFragmentManager
-            val transaction: FragmentTransaction = manger.beginTransaction()
+            val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
             if (!to.isAdded) {
-                if (from != null) {
-                    transaction.hide(from)
-                }
+                transaction.hide(from)
                 transaction.add(R.id.container, to).commit()
             } else {
-                if (from != null) {
-                    transaction.hide(from)
-                }
+                transaction.hide(from)
                 transaction.show(to).commit()
             }
 
         }
     }
-
 
     override val layoutId: Int = R.layout.app_activity_main
 
@@ -57,17 +59,15 @@ class MainActivity : BaseActivity<MainViewModel, AppActivityMainBinding>() {
         transaction.add(R.id.container, mHomeFragment)
         transaction.commit()
         mDataBind.bottomView.setOnNavigationItemSelectedListener {
-            var fragCategory: Fragment? = null
-            when (it.itemId) {
-                R.id.menu_home -> fragCategory = mHomeFragment
-                R.id.menu_services -> fragCategory = mServiceFragment
-                R.id.menu_housekeeper -> fragCategory = mHousekeeperFragment
-                R.id.menu_message -> fragCategory = mNoticeFragment
-                R.id.menu_account -> fragCategory = mUserFragment
+            val fragCategory = when (it.itemId) {
+                R.id.menu_home -> mHomeFragment
+                R.id.menu_services -> mServiceFragment
+                R.id.menu_housekeeper -> mHousekeeperFragment
+                R.id.menu_message -> mNoticeFragment
+                R.id.menu_account -> mUserFragment
+                else -> mHomeFragment
             }
-
-            supportActionBar?.title = getString(R.string.menu_home)
-            switchFragment(fromFragment, fragCategory!!)
+            switchFragment(fromFragment, fragCategory)
             fromFragment = fragCategory
             true
         }

@@ -12,10 +12,13 @@ class CloudPayActivity : BaseActivity<CloudViewModel, AppActivityCloudPayBinding
 
 
     override fun initView() {
+        mDataBind.toolbar.title.text = "云缴费"
+        mDataBind.toolbar.backIv.setOnClickListener {
+            finish()
+        }
         mDataBind.itemCableTv.setOnClickListener {
             mViewModel.click(it)
         }
-
     }
 
     override fun initData() {

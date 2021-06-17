@@ -15,7 +15,7 @@ object DisplayUtils {
      * @return px
      */
     @JvmStatic
-    fun getWith(context: Context): Int {
+    fun getWidth(context: Context): Int {
         val dm = context.resources.displayMetrics
         return dm.widthPixels
     }

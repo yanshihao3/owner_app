@@ -1,8 +1,7 @@
 package com.zq.base.utils
 
 import android.view.Gravity
-import com.hjq.toast.style.ToastWhiteStyle
-import com.zq.base.BaseApplication
+import com.hjq.toast.style.WhiteToastStyle
 
 /**
  * @program: mvvm
@@ -13,7 +12,7 @@ import com.zq.base.BaseApplication
  *
  * @create: 2021-03-05 17:33
  **/
-class ToastStyle : ToastWhiteStyle(BaseApplication.getApplication()) {
+class ToastStyle : WhiteToastStyle() {
     override fun getGravity(): Int {
         return Gravity.BOTTOM
     }

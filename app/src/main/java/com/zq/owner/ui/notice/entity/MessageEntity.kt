@@ -9,5 +9,5 @@ package com.zq.owner.ui.notice.entity
  *
  * @create: 2021-06-09 13:32
  **/
-class NewsEntity {
+class MessageEntity {
 }

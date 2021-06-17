@@ -5,7 +5,7 @@
 
         <variable
             name="news"
-            type="com.zq.owner.ui.notice.entity.NewsEntity" />
+            type="com.zq.owner.ui.notice.entity.MessageEntity" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

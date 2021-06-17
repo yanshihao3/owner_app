@@ -89,7 +89,7 @@ public class EmotiomComplateFragment extends BaseFragment {
      */
     private void initEmotion() {
         // 获取屏幕宽度
-        int screenWidth = DisplayUtils.getWith(getActivity());
+        int screenWidth = DisplayUtils.getWidth(getActivity());
         // item的间距
         int spacing = DisplayUtils.dip2px(getActivity(), 12);
         // 动态计算item的宽度和高度

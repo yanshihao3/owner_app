@@ -33,8 +33,8 @@ open class BaseApplication : Application() {
             .addCallback(CustomCallback())
             .commit()
 
-        ToastUtils.init(this)
-        ToastUtils.initStyle(ToastStyle())
+        ToastUtils.init(this, ToastStyle())
+
 
     }
 

@@ -1,5 +1,6 @@
 package com.zq.owner.view;
 
+import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -197,7 +198,9 @@ public class FaceView extends View implements Runnable {
         mArcPaint.setStrokeCap(Paint.Cap.ROUND);
 
         //开启线程检测
-        new Thread(this).start();
+        //  new Thread(this).start();
+
+
     }
 
     @SuppressLint("DrawAllocation")
@@ -239,12 +242,24 @@ public class FaceView extends View implements Runnable {
     @Override
     protected void onVisibilityChanged(View changedView, int visibility) {
         super.onVisibilityChanged(changedView, visibility);
-      //  mStart = (visibility == VISIBLE);
+        //  mStart = (visibility == VISIBLE);
     }
 
-    public void setStart() {
-        this.mStart = true;
+    public void start() {
+        // this.mStart = true;
+        ValueAnimator valueAnimator = ValueAnimator.ofFloat(0f, mRadius);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float currentValue = (float) animation.getAnimatedValue();
+                currentRadius = currentValue;
+                invalidate();
+            }
+        });
+        valueAnimator.setDuration(500);
+        valueAnimator.start();
     }
+
 
     @Override
     public void run() {
@@ -260,6 +275,7 @@ public class FaceView extends View implements Runnable {
             }
         }
     }
+
 
     /**
      * 动态检测改变值

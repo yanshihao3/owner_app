@@ -18,11 +18,6 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> :
     BaseNoModelActivity<DB>() {
     protected lateinit var mViewModel: VM
 
-    override fun beforeSetContentView() {
-        super.beforeSetContentView()
-        initStatusBar()
-    }
-
     override fun otherInit() {
         super.otherInit()
         performBindView()
@@ -66,18 +61,6 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> :
             val tp = type.actualTypeArguments[0]
             val tClass = tp as? Class<VM> ?: BaseViewModel::class.java
             mViewModel = ViewModelProvider(this, ViewModelFactory()).get(tClass) as VM
-        }
-    }
-
-    /**
-     * 默认的状态栏 ，不需要可以重写
-     */
-
-    open fun initStatusBar() {
-        immersionBar {
-            keyboardEnable(false)
-            transparentStatusBar()
-            statusBarDarkFont(true, 0.2f)
         }
     }
 

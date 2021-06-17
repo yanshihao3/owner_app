@@ -23,7 +23,7 @@ class NoticeFragment : BaseLazyFragment<NoticeViewModel, AppFragmentNoticeBindin
         mDataBind!!.viewPager.adapter = object : FragmentStateAdapter(this) {
             override fun getItemCount(): Int = 3
 
-            override fun createFragment(position: Int) = NewsFragment()
+            override fun createFragment(position: Int) = MessageFragment()
 
         }
         mDataBind!!.viewPager.isUserInputEnabled = false

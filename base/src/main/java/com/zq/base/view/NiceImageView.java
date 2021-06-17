@@ -121,12 +121,13 @@ public class NiceImageView extends AppCompatImageView {
         clearInnerBorderWidth();
     }
 
+
+
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         width = w;
         height = h;
-
         initBorderRectF();
         initSrcRectF();
     }
@@ -160,6 +161,8 @@ public class NiceImageView extends AppCompatImageView {
             // 计算tempPath和path的差集
             srcPath.op(path, Path.Op.DIFFERENCE);
             canvas.drawPath(srcPath, paint);
+            //zhangshi
+            srcPath.reset();
         }
         paint.setXfermode(null);
 
@@ -172,6 +175,7 @@ public class NiceImageView extends AppCompatImageView {
         canvas.restore();
         // 绘制边框
         drawBorders(canvas);
+
     }
 
     private void drawBorders(Canvas canvas) {

@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#fff0f2f5"
-        tools:context=".ui.notice.NewsFragment">
+        tools:context=".ui.notice.MessageFragment">
 
         <com.scwang.smart.refresh.layout.SmartRefreshLayout
             android:id="@+id/refreshLayout"

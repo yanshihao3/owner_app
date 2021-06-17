@@ -15,7 +15,7 @@ import com.zq.owner.BuildConfig
  *
  * @create: 2021-03-03 17:40
  **/
-class NewApplication : BaseApplication() {
+class MyApplication : BaseApplication() {
     override fun onCreate() {
         super.onCreate()
         setDebug(BuildConfig.DEBUG)

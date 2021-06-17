@@ -11,28 +11,29 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="10dp"
-        android:background="@color/gray3">
+        android:layout_height="64dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="16dp"
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{phoneInfo.name}" />
+                android:text="@{phoneInfo.name}"
+                android:textColor="#ff333333"
+                android:textSize="14sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{phoneInfo.phone}" />
+                android:layout_marginTop="2dp"
+                android:text="@{phoneInfo.phone}"
+                android:textColor="#ff999999"
+                android:textSize="10sp" />
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -41,6 +42,6 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="16dp"
-            app:srcCompat="@mipmap/app_icon_right_arrow" />
+            app:srcCompat="@mipmap/app_service_phone_icon" />
     </RelativeLayout>
 </layout>

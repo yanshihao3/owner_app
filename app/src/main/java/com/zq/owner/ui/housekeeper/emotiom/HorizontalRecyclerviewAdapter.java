@@ -72,7 +72,7 @@ public class HorizontalRecyclerviewAdapter extends RecyclerView.Adapter<Horizont
         /**
          * 动态计算底部tab的宽度。
          */
-        int width= DisplayUtils.getWith(context);
+        int width= DisplayUtils.getWidth(context);
         float itemW=width/6;
         ViewGroup.LayoutParams lp=  holder.imageBtn.getLayoutParams();
         lp.width= (int) itemW;

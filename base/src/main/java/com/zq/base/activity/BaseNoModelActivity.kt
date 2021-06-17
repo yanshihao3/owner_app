@@ -7,6 +7,7 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import com.gyf.immersionbar.ktx.immersionBar
 import com.kingja.loadsir.core.LoadService
 import com.kingja.loadsir.core.LoadSir
 import com.zq.base.baseinterface.IBaseView
@@ -36,6 +37,7 @@ abstract class BaseNoModelActivity<DB : ViewDataBinding> : AppCompatActivity(), 
         super.onCreate(savedInstanceState)
         beforeSetContentView()
         mDataBind = DataBindingUtil.setContentView(this, layoutId)
+        initStatusBar()
         mDataBind.lifecycleOwner = this
         mActivityContext = this
         otherInit()
@@ -111,6 +113,18 @@ abstract class BaseNoModelActivity<DB : ViewDataBinding> : AppCompatActivity(), 
      */
     open fun beforeSetContentView() {
 
+    }
+
+    /**
+     * 默认的状态栏 ，不需要可以重写
+     */
+
+    open fun initStatusBar() {
+        immersionBar {
+            keyboardEnable(false)
+            transparentStatusBar()
+            statusBarDarkFont(true, 0.2f)
+        }
     }
 
 }

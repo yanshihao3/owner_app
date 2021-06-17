@@ -4,15 +4,13 @@ package com.zq.owner.ui.face
 import android.content.Intent
 import android.net.Uri
 import android.util.Log
-import android.view.View
-import androidx.camera.core.CameraSelector
-import androidx.camera.core.ImageCapture
-import androidx.camera.core.ImageCaptureException
-import androidx.camera.core.Preview
+import android.util.Size
+import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import com.google.common.util.concurrent.ListenableFuture
 import com.zq.base.activity.BaseNoModelActivity
+import com.zq.base.utils.SharedPreferencesUtils
 import com.zq.owner.R
 import com.zq.owner.databinding.AppActivityFaceBinding
 import com.zq.owner.utils.FileUtils
@@ -41,9 +39,10 @@ class FaceActivity : BaseNoModelActivity<AppActivityFaceBinding>() {
         cameraProviderFuture.addListener(Runnable {
             val cameraProvider = cameraProviderFuture.get()
             bindPreview(cameraProvider)
-            mDataBind.previewView.visibility = View.VISIBLE
         }, ContextCompat.getMainExecutor(this))
     }
+
+    private var isFirst = true
 
     private fun bindPreview(cameraProvider: ProcessCameraProvider) {
         val preview: Preview = Preview.Builder()
@@ -54,8 +53,23 @@ class FaceActivity : BaseNoModelActivity<AppActivityFaceBinding>() {
             .requireLensFacing(CameraSelector.LENS_FACING_FRONT)
             .build()
         preview.setSurfaceProvider(mDataBind.previewView.surfaceProvider)
+        val imageAnalysis = ImageAnalysis.Builder()
+            .setTargetResolution(Size(1280, 720))
+            .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+            .build()
 
-        cameraProvider.bindToLifecycle(this, cameraSelector, preview, imageCapture)
+        imageAnalysis.setAnalyzer(cameraExecutor, ImageAnalysis.Analyzer { image ->
+            image.close()
+            if (isFirst) {
+                isFirst = false
+                mDataBind.faceView.post {
+                    mDataBind.faceView.start()
+                }
+            }
+
+        })
+
+        cameraProvider.bindToLifecycle(this, cameraSelector, preview, imageCapture, imageAnalysis)
     }
 
     override fun initData() {
@@ -73,7 +87,10 @@ class FaceActivity : BaseNoModelActivity<AppActivityFaceBinding>() {
                     override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
                         val savedUri = outputFileResults.savedUri ?: Uri.fromFile(photoFile)
                         Log.d("TAG", "Photo capture succeeded: $savedUri")
+                        SharedPreferencesUtils.init(mActivityContext)
+                            .putString("face", savedUri.toString())
                         startActivity(Intent(mActivityContext, FaceSuccessActivity::class.java))
+                        finish()
                     }
                 })
 

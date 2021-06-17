@@ -20,7 +20,9 @@ import com.zq.owner.ui.community.report.viewmodel.ReportViewModel
 import com.zq.owner.utils.FileUtils
 import java.util.*
 
-
+/**
+ * 报事报修界面
+ */
 class ReportActivity : BaseActivity<ReportViewModel, AppActivityReportBinding>() {
     override val layoutId: Int = R.layout.app_activity_report
     private lateinit var pvTime: TimePickerView
@@ -40,7 +42,10 @@ class ReportActivity : BaseActivity<ReportViewModel, AppActivityReportBinding>()
 
 
     override fun initView() {
-
+        mDataBind.toolbar.title.text = "报事报修"
+        mDataBind.toolbar.backIv.setOnClickListener {
+            finish()
+        }
         // 自定义图片加载器
         // 自定义图片加载器
         ISNav.getInstance().init { _, path, imageView ->
@@ -86,16 +91,15 @@ class ReportActivity : BaseActivity<ReportViewModel, AppActivityReportBinding>()
 
     private fun initImagePicker() {
         // 自由配置选项
-        // 自由配置选项
         config = ISListConfig.Builder()
             // 是否多选, 默认true
             .multiSelect(true)
             // 是否记住上次选中记录, 仅当multiSelect为true的时候配置，默认为true
             .rememberSelected(true)
             // “确定”按钮背景色
-            .btnBgColor(Color.GRAY)
+            .btnBgColor(Color.parseColor("#3F51B5"))
             // “确定”按钮文字颜色
-            .btnTextColor(Color.BLUE)
+            .btnTextColor(Color.WHITE)
             // 使用沉浸式状态栏
             .statusBarColor(Color.parseColor("#3F51B5"))
             // 返回图标ResId
@@ -154,16 +158,26 @@ class ReportActivity : BaseActivity<ReportViewModel, AppActivityReportBinding>()
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         // 图片选择结果回调
-        // 图片选择结果回调
         if (requestCode === REQUEST_LIST_CODE && resultCode === RESULT_OK && data != null) {
             val pathList: ArrayList<String>? = data.getStringArrayListExtra("result")
             if (pathList != null) {
+                listData.clear()
                 for (path in pathList) {
-                    listData.add(0, ImageInfo(false, path))
+                    listData.add(ImageInfo(false, path))
                 }
-                adapter.notifyDataSetChanged()
+                judgeNumber()
             }
         }
+    }
+
+    /**
+     * 判断当前图片个个数
+     */
+    private fun judgeNumber() {
+        if (listData.size < 3) {
+            listData.add(ImageInfo(true, ""))
+        }
+        adapter.notifyDataSetChanged()
     }
 
 }

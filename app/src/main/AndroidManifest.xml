@@ -8,9 +8,11 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 读取sd卡 -->
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera.any" />
+
     <application
-        android:name=".application.NewApplication"
+        android:name=".application.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -20,17 +22,24 @@
         android:theme="@style/Theme.Mvvm"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ui.face.FaceSuccessActivity"></activity>
+        <activity android:name=".ui.community.house.BindHouseActivity"></activity>
+        <activity android:name=".ui.community.house.HouseActivity" />
+        <activity android:name=".ui.face.FaceResultActivity" />
+        <activity android:name=".ui.face.FaceSuccessActivity" />
         <activity android:name=".ui.face.FaceActivity" />
         <activity android:name=".ui.service.parking.ParkingActivity" />
         <activity android:name=".ui.service.express.ExpressActivity" />
         <activity android:name=".ui.service.questionnaire.QuestionnaireActivity" />
-        <activity android:name=".ui.community.complaint.ComplaintActivity" />
+        <activity
+            android:name=".ui.community.complaint.ComplaintActivity"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".ui.community.service.ServiceTelephoneActivity" />
         <activity android:name=".ui.community.pay.CloudPayActivity" />
         <activity android:name=".ui.community.pay.PayActivity" />
         <activity android:name=".ui.community.report.ReportRecordActivity" />
-        <activity android:name=".ui.community.report.ReportActivity" />
+        <activity
+            android:name=".ui.community.report.ReportActivity"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustPan">
