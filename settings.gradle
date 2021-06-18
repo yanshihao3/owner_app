@@ -1,7 +1,6 @@
 include ':network'
 include ':user'
-include ':news'
 include ':base'
 include ':app'
-rootProject.name = "owner_app"
 include ':common'
+rootProject.name = "owner_app"

@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.service.mail.MallActivity">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/app_include_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/line2_color"
+                    android:orientation="vertical"
+                    app:layout_scrollFlags="scroll">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/image"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@mipmap/app_service_icon_head" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="horizontal">
+
+                        <com.zq.owner.view.MenuItemView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_weight="1"
+                            app:menu_icon="@mipmap/ic_launcher"
+                            app:menu_title="社区生鲜" />
+
+
+                        <com.zq.owner.view.MenuItemView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_weight="1"
+                            app:menu_icon="@mipmap/ic_launcher"
+                            app:menu_title="社区团购" />
+
+                        <com.zq.owner.view.MenuItemView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_weight="1"
+                            app:menu_icon="@mipmap/ic_launcher"
+                            app:menu_title="社区服务" />
+
+
+                        <com.zq.owner.view.MenuItemView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_weight="1"
+                            app:menu_icon="@mipmap/ic_launcher"
+                            app:menu_title="社区优选" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal"
+                        android:paddingBottom="16dp">
+
+                        <LinearLayout
+                            android:layout_width="160dp"
+                            android:layout_height="226dp"
+                            android:layout_marginStart="16dp"
+                            android:background="@drawable/app_mail_icon_purchase_bg"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="8dp"
+                                android:text="采购榜"
+                                android:textColor="#ffffffff"
+                                android:textSize="12sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/app_express_card_bg"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_weight="1">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/iamge1"
+                                        android:layout_width="60dp"
+                                        android:layout_height="40dp"
+                                        android:layout_centerVertical="true"
+                                        app:srcCompat="@mipmap/app_mail_icon_list" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_toRightOf="@id/iamge1"
+                                        android:orientation="vertical">
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="¥ 1.98"
+                                            android:textColor="#fff54a47"
+                                            android:textSize="10sp" />
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="日售426"
+                                            android:textColor="#ff999999"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        app:srcCompat="@mipmap/app_mail_icon_list_top_1" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/iamge2"
+                                        android:layout_width="60dp"
+                                        android:layout_height="40dp"
+                                        android:layout_centerVertical="true"
+                                        app:srcCompat="@mipmap/app_mail_icon_list" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_toRightOf="@id/iamge2"
+                                        android:orientation="vertical">
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="¥ 1.98"
+                                            android:textColor="#fff54a47"
+                                            android:textSize="10sp" />
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="日售426"
+                                            android:textColor="#ff999999"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        app:srcCompat="@mipmap/app_mail_icon_list_top_2" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginBottom="16dp"
+                                    android:layout_weight="1">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/iamge3"
+                                        android:layout_width="60dp"
+                                        android:layout_height="40dp"
+                                        android:layout_centerVertical="true"
+                                        app:srcCompat="@mipmap/app_mail_icon_list" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_toRightOf="@id/iamge3"
+                                        android:orientation="vertical">
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="¥ 1.98"
+                                            android:textColor="#fff54a47"
+                                            android:textSize="10sp" />
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="日售426"
+                                            android:textColor="#ff999999"
+                                            android:textSize="10sp" />
+                                    </LinearLayout>
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        app:srcCompat="@mipmap/app_mail_icon_list_top_3" />
+                                </RelativeLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="160dp"
+                            android:layout_height="226dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="16dp"
+                            android:orientation="vertical">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="110dp"
+                                android:background="@drawable/app_express_card_bg"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/group"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:text="团购"
+                                    android:textColor="#ff333333"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/group_image_1"
+                                    android:layout_width="68dp"
+                                    android:layout_height="54dp"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/group"
+                                    app:srcCompat="@mipmap/app_mail_icon_list" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/group_image_2"
+                                    android:layout_width="68dp"
+                                    android:layout_height="54dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/group"
+                                    app:srcCompat="@mipmap/app_mail_icon_group_image1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:text="牛肉"
+                                    android:textColor="#ff666666"
+                                    android:textSize="10sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="8dp"
+                                    android:text="西红柿"
+                                    android:textColor="#ff666666"
+                                    android:textSize="10sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="@id/group_image_2" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="110dp"
+                                android:layout_marginTop="6dp"
+                                android:background="@drawable/app_express_card_bg"
+                                android:orientation="vertical">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="110dp"
+                                    android:background="@drawable/app_express_card_bg"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/live"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="社区直播"
+                                        android:textColor="#ff333333"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <FrameLayout
+                                        android:layout_width="68dp"
+                                        android:layout_height="68dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/live">
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            app:srcCompat="@mipmap/app_mail_icon_live_1" />
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            app:srcCompat="@mipmap/app_icon_play" />
+
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="68dp"
+                                        android:layout_height="68dp"
+                                        android:layout_marginTop="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/live"
+                                        app:srcCompat="@mipmap/app_mail_icon_live_2">
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            app:srcCompat="@mipmap/app_mail_icon_live_2" />
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            app:srcCompat="@mipmap/app_icon_play" />
+                                    </FrameLayout>
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line"
+                    app:tabIndicatorColor="#0095FF"
+                    app:tabIndicatorFullWidth="false"
+                    app:tabMode="scrollable"
+                    app:tabPaddingEnd="16dp"
+                    app:tabPaddingStart="16dp"
+                    app:tabRippleColor="@color/transparent"
+                    app:tabSelectedTextColor="#0095FF">
+
+                </com.google.android.material.tabs.TabLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

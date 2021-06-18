@@ -44,6 +44,8 @@ dependencies {
     implementation "com.google.android.material:material:$rootProject.library.material"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.library.constraintlayout"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
@@ -75,6 +77,5 @@ dependencies {
     // If you want to additionally use the CameraX View class
     implementation "androidx.camera:camera-view:1.0.0-alpha25"
 
-    addComponent 'news'
     addComponent 'user'
 }

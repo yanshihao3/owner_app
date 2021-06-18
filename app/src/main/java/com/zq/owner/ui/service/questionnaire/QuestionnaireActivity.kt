@@ -8,10 +8,13 @@ import com.zq.owner.databinding.AppActivityQuestionnaireBinding
 class QuestionnaireActivity : BaseNoModelActivity<AppActivityQuestionnaireBinding>() {
 
 
-    override val layoutId: Int=R.layout.app_activity_questionnaire
+    override val layoutId: Int = R.layout.app_activity_questionnaire
 
     override fun initView() {
-
+        mDataBind.toolbar.title.text = "问卷调查"
+        mDataBind.toolbar.backIv.setOnClickListener {
+            finish()
+        }
     }
 
     override fun initData() {

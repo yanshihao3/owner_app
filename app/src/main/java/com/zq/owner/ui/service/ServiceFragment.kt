@@ -1,13 +1,28 @@
 package com.zq.owner.ui.service
 
+import android.content.Intent
 import androidx.recyclerview.widget.GridLayoutManager
 import com.zq.base.decoration.GridSpaceItemDecoration
 import com.zq.base.fragment.BaseLazyFragment
+import com.zq.base.utils.SharedPreferencesUtils
 import com.zq.owner.R
 import com.zq.owner.databinding.AppFragmentServiceBinding
+import com.zq.owner.ui.community.complaint.ComplaintActivity
+import com.zq.owner.ui.community.house.HouseActivity
+import com.zq.owner.ui.community.pay.CloudPayActivity
+import com.zq.owner.ui.community.report.ReportRecordActivity
+import com.zq.owner.ui.face.FaceActivity
+import com.zq.owner.ui.face.FaceResultActivity
 import com.zq.owner.ui.service.adapter.MenuAdapter
 import com.zq.owner.ui.service.entity.MenuItem
+import com.zq.owner.ui.service.express.ExpressActivity
+import com.zq.owner.ui.service.household.HouseholdActivity
+import com.zq.owner.ui.service.live.LiveActivity
+import com.zq.owner.ui.service.mail.MallActivity
+import com.zq.owner.ui.service.parking.ParkingActivity
+import com.zq.owner.ui.service.questionnaire.QuestionnaireActivity
 import com.zq.owner.ui.service.viewmodel.ServiceViewModel
+import com.zq.owner.ui.service.visitor.VisitorActivity
 
 /**
  * @program: owner_app
@@ -60,6 +75,39 @@ class ServiceFragment : BaseLazyFragment<ServiceViewModel, AppFragmentServiceBin
         mDataBind.recyclerView2.layoutManager = layoutManager2
         mDataBind.recyclerView2.adapter = adapter2
         mDataBind.recyclerView2.addItemDecoration(GridSpaceItemDecoration(24))
+
+        adapter1.setOnItemClickListener { adapter, view, position ->
+            when (position) {
+                0 -> { //身份卡
+                    val string = SharedPreferencesUtils.init(mContext)
+                        .getString("face", "")
+                    if (string != "") {
+                        startActivity(Intent(context, FaceResultActivity::class.java))
+                    } else {
+                        startActivity(Intent(context, FaceActivity::class.java))
+                    }
+                }
+                2 -> startActivity(Intent(context, LiveActivity::class.java)) //居住证明界面
+                3 -> startActivity(Intent(context, HouseActivity::class.java)) //我的房屋界面
+                4 -> startActivity(Intent(context, HouseholdActivity::class.java)) //住户管理
+                5 -> startActivity(Intent(context, ParkingActivity::class.java)) //车位缴费
+                6 -> startActivity(Intent(context, VisitorActivity::class.java)) //访客邀请
+                8 -> startActivity(Intent(context, ReportRecordActivity::class.java)) //报事报修记录
+                9 -> startActivity(Intent(context, ComplaintActivity::class.java)) //投诉建议界面
+                13 -> startActivity(Intent(context, QuestionnaireActivity::class.java)) //问卷调查
+            }
+        }
+
+        adapter2.setOnItemClickListener { adapter, view, position ->
+            when (position) {
+                0 -> {
+                    startActivity(Intent(context, MallActivity::class.java)) //社区优先
+                }
+                2 -> startActivity(Intent(context, ExpressActivity::class.java)) //快递查询
+                3 -> startActivity(Intent(context, CloudPayActivity::class.java)) //云缴费
+
+            }
+        }
 
     }
 

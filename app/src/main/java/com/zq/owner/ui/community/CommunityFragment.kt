@@ -7,7 +7,6 @@ import com.billy.cc.core.component.CC
 import com.zq.base.decoration.SpacesItemDecoration
 
 import com.zq.base.fragment.BaseLazyFragment
-import com.zq.base.utils.SharedPreferencesUtils
 import com.zq.owner.R
 import com.zq.owner.databinding.AppFragmentCommunityBinding
 import com.zq.owner.ui.community.complaint.ComplaintActivity
@@ -18,8 +17,6 @@ import com.zq.owner.ui.community.report.ReportActivity
 import com.zq.owner.ui.community.report.ReportRecordActivity
 import com.zq.owner.ui.community.service.ServiceTelephoneActivity
 import com.zq.owner.ui.community.viewmodel.CommunityViewModel
-import com.zq.owner.ui.face.FaceActivity
-import com.zq.owner.ui.face.FaceResultActivity
 
 
 class CommunityFragment : BaseLazyFragment<CommunityViewModel, AppFragmentCommunityBinding>() {
@@ -81,7 +78,7 @@ class CommunityFragment : BaseLazyFragment<CommunityViewModel, AppFragmentCommun
 
         //我的房屋
         mDataBind.itemHouse.setOnClickListener {
-            startActivity(Intent(context, ReportRecordActivity::class.java))
+            startActivity(Intent(context, HouseActivity::class.java))
         }
 
 

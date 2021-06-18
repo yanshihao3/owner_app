@@ -47,7 +47,6 @@ class ReportActivity : BaseActivity<ReportViewModel, AppActivityReportBinding>()
             finish()
         }
         // 自定义图片加载器
-        // 自定义图片加载器
         ISNav.getInstance().init { _, path, imageView ->
             imageView.load(FileUtils.getImageContentUri(mActivityContext, path))
         }

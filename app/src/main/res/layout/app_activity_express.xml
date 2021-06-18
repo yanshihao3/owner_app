@@ -10,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
         tools:context=".ui.service.express.ExpressActivity">
 
         <include
@@ -21,118 +22,132 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/rl"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="16dp"
+            android:background="@drawable/app_express_serach_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                app:srcCompat="@mipmap/app_express_icon_serach" />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:hint="请输入快递单号" />
+                android:hint="请输入快递单号"
+                android:textColor="#ff999999"
+                android:textSize="12sp" />
+        </LinearLayout>
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="8dp"
-                app:srcCompat="@android:drawable/ic_menu_search" />
-        </RelativeLayout>
-
-        <View
-            android:id="@+id/line"
-            android:layout_width="wrap_content"
-            android:layout_height="2dp"
-            android:background="@color/line_color"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/line2_color"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rl" />
+            app:layout_constraintTop_toBottomOf="@id/rl">
 
-        <RelativeLayout
-            android:id="@+id/send"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginRight="16dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/line">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/app_express_card_bg">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                app:srcCompat="@mipmap/ic_launcher" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    app:srcCompat="@mipmap/app_express_icon_ji" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="16dp"
-                android:layout_toRightOf="@id/image"
-                android:orientation="vertical">
-
-                <androidx.appcompat.widget.AppCompatTextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="寄快递" />
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_toRightOf="@id/image"
+                    android:orientation="vertical">
 
-                <androidx.appcompat.widget.AppCompatTextView
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="寄快递"
+                        android:textColor="#ff333333"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="推荐附近的快递小哥"
+                        android:textColor="#ff999999"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/app_express_card_bg">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/collect_image"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    app:srcCompat="@mipmap/app_express_icon_record" />
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="推荐附近的快递小哥" />
-            </LinearLayout>
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_toRightOf="@id/collect_image"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="快递记录"
+                        android:textColor="#ff333333"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="查看我的快递"
+                        android:textColor="#ff999999"
+                        android:textSize="12sp" />
+                </LinearLayout>
 
 
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/collect"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginRight="16dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/send">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/collect_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                app:srcCompat="@mipmap/ic_launcher" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="16dp"
-                android:layout_toRightOf="@id/collect_image"
-                android:orientation="vertical">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="快递记录" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="查看我的快递" />
-            </LinearLayout>
-
-
-        </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

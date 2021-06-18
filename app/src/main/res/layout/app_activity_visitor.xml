@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context=".ui.community.house.BindHouseActivity">
+        tools:context=".ui.service.visitor.VisitorActivity">
 
         <include
             android:id="@+id/toolbar"
@@ -23,94 +23,18 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
-            android:id="@+id/layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="38dp"
-                android:background="@color/line2_color"
-                android:gravity="bottom"
-                android:paddingStart="16dp"
-                android:paddingBottom="8dp"
-                android:text="填写房屋信息"
-                android:textColor="#ff999999"
-                android:textSize="10sp" />
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:paddingStart="16dp">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="城市"
-                    android:textColor="#ff999999"
-                    android:textSize="14sp" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:drawableStart="@mipmap/app_house_position"
-                    android:drawablePadding="8dp"
-                    android:text="石家庄市"
-                    android:textColor="#ff333333"
-                    android:textSize="14sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/line_color" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingStart="16dp">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="小区"
-                    android:textColor="#ff999999"
-                    android:textSize="14sp" />
-
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:background="@null"
-                    android:hint="填写小区"
-                    android:textColor="#ff333333"
-                    android:textColorHint="#999999"
-                    android:textSize="14sp" />
-
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/line_color" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingStart="16dp">
+                android:layout_marginStart="16dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
@@ -120,119 +44,15 @@
                     android:textColor="#ff999999"
                     android:textSize="14sp" />
 
-                <androidx.appcompat.widget.AppCompatEditText
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="16dp"
-                    android:background="@null"
-                    android:hint="填写房号"
-                    android:textColor="#ff333333"
-                    android:textColorHint="#999999"
-                    android:textSize="14sp" />
-            </RelativeLayout>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="38dp"
-                android:background="@color/line2_color"
-                android:gravity="bottom"
-                android:paddingStart="16dp"
-                android:paddingBottom="8dp"
-                android:text="填写物业登记身份信息"
-                android:textColor="#ff999999"
-                android:textSize="10sp" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingStart="16dp">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="姓名"
-                    android:textColor="#ff999999"
-                    android:textSize="14sp" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:background="@null"
-                    android:text="潘婷"
-                    android:textColor="#ff333333"
-                    android:textSize="14sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/line_color" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingStart="16dp">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="手机号"
-                    android:textColor="#ff999999"
-                    android:textSize="14sp" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:background="@null"
-                    android:text="138 3490 6651"
-                    android:textColor="#ff333333"
-                    android:textSize="14sp" />
-
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/line_color" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingStart="16dp">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="选择类型"
-                    android:textColor="#ff999999"
-                    android:textSize="14sp" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:background="@null"
-                    android:drawableRight="@mipmap/app_icon_right_arrow"
                     android:drawablePadding="8dp"
                     android:gravity="center"
-                    android:text="个人用户"
+                    android:text="小区名称102栋2单元11层1101室"
                     android:textColor="#ff333333"
                     android:textSize="14sp" />
 
@@ -245,111 +65,206 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/type"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:paddingStart="16dp">
+                android:layout_marginStart="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/house">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="选择身份"
-                    android:textColor="#ff999999"
-                    android:textSize="14sp" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:background="@null"
-                    android:drawableRight="@mipmap/app_icon_right_arrow"
-                    android:drawablePadding="8dp"
-                    android:gravity="center"
-                    android:text="业主"
-                    android:textColor="#ff333333"
-                    android:textSize="14sp" />
-
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/line_color" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingStart="16dp">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="证件类型"
-                    android:textColor="#ff999999"
-                    android:textSize="14sp" />
-
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:drawableRight="@mipmap/app_icon_right_arrow"
-                    android:drawablePadding="8dp"
-                    android:gravity="center"
-                    android:text="身份证"
-                    android:textColor="#ff333333"
-                    android:textSize="14sp" />
-
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/line_color" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingStart="16dp">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="证件号码"
+                    android:text="访客手机号"
                     android:textColor="#ff999999"
                     android:textSize="14sp" />
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/selected_area"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="16dp"
                     android:background="@null"
-                    android:hint="输入证件号码"
+                    android:hint="请输入手机号"
                     android:textColor="#ff333333"
                     android:textColorHint="#999999"
                     android:textSize="14sp" />
-
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/line2_color" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingStart="16dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="访客属性"
+                    android:textColor="#ff999999"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:drawableRight="@mipmap/app_icon_right_arrow"
+                    android:drawablePadding="8dp"
+                    android:gravity="center"
+                    android:text="选择类型"
+                    android:textColor="#ff333333"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line_color" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingStart="16dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="有效次数"
+                    android:textColor="#ff999999"
+                    android:textSize="14sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:text="有效期内5次"
+                    android:textColor="#ff999999"
+                    android:textSize="14sp" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line_color" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingStart="16dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="到访时间"
+                    android:textColor="#ff999999"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:drawableRight="@mipmap/app_icon_right_arrow"
+                    android:drawablePadding="8dp"
+                    android:gravity="center"
+                    android:text="2020年6月12日 9:00"
+                    android:textColor="#ff333333"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line_color" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingStart="16dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="有效时常"
+                    android:textColor="#ff999999"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:drawableRight="@mipmap/app_icon_right_arrow"
+                    android:drawablePadding="8dp"
+                    android:gravity="center"
+                    android:text="3小时"
+                    android:textColor="#ff333333"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line_color" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingStart="16dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="有效时间"
+                    android:textColor="#ff999999"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:text="2020年6月12日 9:00-11:00"
+                    android:textColor="#ff999999"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:background="@color/line2_color" />
+                android:background="@color/line2_color"></LinearLayout>
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -369,7 +284,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/app_face_btn_bg"
-                android:text="提交"
+                android:text="一键分享"
                 android:textColor="#ffffffff"
                 android:textSize="14sp"
                 android:textStyle="bold" />

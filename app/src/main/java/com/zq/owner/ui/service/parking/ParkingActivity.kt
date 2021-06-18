@@ -14,7 +14,9 @@ class ParkingActivity : BaseNoModelActivity<AppCtivityParkingBinding>() {
 
 
     override fun initView() {
-
+        mDataBind.backIv.setOnClickListener {
+            finish()
+        }
     }
 
     override fun initData() {
