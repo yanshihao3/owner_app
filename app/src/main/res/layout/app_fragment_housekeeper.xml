@@ -10,26 +10,27 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:layout_marginStart="16dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
             android:gravity="center_vertical"
             android:text="物业管家"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="56dp">
+            android:layout_height="51dp"
+            android:background="@drawable/app_shape_housekeeper_bg">
 
             <com.zq.base.view.NiceImageView
                 android:id="@+id/image"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="16dp"
                 app:is_circle="true"
-                app:srcCompat="@mipmap/ic_launcher" />
+                app:srcCompat="@mipmap/app_house_photo" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -44,22 +45,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="物业管家-石头"
-                    android:textSize="14sp" />
+                    android:textColor="#ffffffff"
+                    android:textSize="12sp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="物业管家-石头"
-                    android:textSize="12sp" />
+                    android:drawableLeft="@mipmap/app_housekeeper_icon_time"
+                    android:drawablePadding="3dp"
+                    android:gravity="center"
+                    android:text="工作中"
+                    android:textColor="#ffffffff"
+                    android:textSize="10sp" />
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="16dp"
-                android:src="@drawable/app_ic_phone" />
+                android:src="@mipmap/app_dialog_icon_phone" />
 
         </RelativeLayout>
         <!--内容-->

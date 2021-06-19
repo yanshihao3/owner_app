@@ -22,7 +22,8 @@
         android:theme="@style/Theme.Mvvm"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ui.service.visitor.VisitorActivity"></activity>
+        <activity android:name=".ui.service.circle.CircleActivity"></activity>
+        <activity android:name=".ui.service.visitor.VisitorActivity" />
         <activity android:name=".ui.service.household.HouseholdActivity" />
         <activity android:name=".ui.service.live.LiveActivity" />
         <activity android:name=".ui.service.mail.MallActivity" />

@@ -33,7 +33,9 @@ class FaceActivity : BaseNoModelActivity<AppActivityFaceBinding>() {
 
     override fun initView() {
         mDataBind.toolbar.title.text = "人脸认证"
-
+        mDataBind.toolbar.backIv.setOnClickListener {
+            finish()
+        }
         cameraExecutor = Executors.newSingleThreadExecutor()
         cameraProviderFuture = ProcessCameraProvider.getInstance(this)
         cameraProviderFuture.addListener(Runnable {

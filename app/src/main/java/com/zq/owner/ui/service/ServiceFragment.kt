@@ -1,7 +1,11 @@
 package com.zq.owner.ui.service
 
 import android.content.Intent
+import android.net.Uri
+import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.zq.base.decoration.GridSpaceItemDecoration
 import com.zq.base.fragment.BaseLazyFragment
 import com.zq.base.utils.SharedPreferencesUtils
@@ -14,6 +18,7 @@ import com.zq.owner.ui.community.report.ReportRecordActivity
 import com.zq.owner.ui.face.FaceActivity
 import com.zq.owner.ui.face.FaceResultActivity
 import com.zq.owner.ui.service.adapter.MenuAdapter
+import com.zq.owner.ui.service.circle.CircleActivity
 import com.zq.owner.ui.service.entity.MenuItem
 import com.zq.owner.ui.service.express.ExpressActivity
 import com.zq.owner.ui.service.household.HouseholdActivity
@@ -55,6 +60,11 @@ class ServiceFragment : BaseLazyFragment<ServiceViewModel, AppFragmentServiceBin
     private val adapter1 by lazy { MenuAdapter() }
     private val adapter2 by lazy { MenuAdapter() }
 
+
+    private val dialog by lazy {
+        context?.let { BottomSheetDialog(it) }
+    }
+
     override fun onFragmentFirstVisible() {
         for (title in title1) {
             dataList1.add(MenuItem("", title))
@@ -69,6 +79,15 @@ class ServiceFragment : BaseLazyFragment<ServiceViewModel, AppFragmentServiceBin
     }
 
     override fun initView() {
+        dialog?.setContentView(R.layout.app_dialog_service_item)
+        dialog?.findViewById<AppCompatTextView>(R.id.call)?.setOnClickListener {
+            callPhone()
+            dialog?.dismiss()
+        }
+
+        dialog?.findViewById<AppCompatButton>(R.id.cancel)?.setOnClickListener {
+            dialog?.dismiss()
+        }
         mDataBind.recyclerView.layoutManager = layoutManager1
         mDataBind.recyclerView.adapter = adapter1
         mDataBind.recyclerView.addItemDecoration(GridSpaceItemDecoration(24))
@@ -94,6 +113,7 @@ class ServiceFragment : BaseLazyFragment<ServiceViewModel, AppFragmentServiceBin
                 6 -> startActivity(Intent(context, VisitorActivity::class.java)) //访客邀请
                 8 -> startActivity(Intent(context, ReportRecordActivity::class.java)) //报事报修记录
                 9 -> startActivity(Intent(context, ComplaintActivity::class.java)) //投诉建议界面
+                11 -> showDialog()
                 13 -> startActivity(Intent(context, QuestionnaireActivity::class.java)) //问卷调查
             }
         }
@@ -103,12 +123,30 @@ class ServiceFragment : BaseLazyFragment<ServiceViewModel, AppFragmentServiceBin
                 0 -> {
                     startActivity(Intent(context, MallActivity::class.java)) //社区优先
                 }
+                1 -> startActivity(Intent(context, CircleActivity::class.java)) //社区圈子
                 2 -> startActivity(Intent(context, ExpressActivity::class.java)) //快递查询
                 3 -> startActivity(Intent(context, CloudPayActivity::class.java)) //云缴费
 
             }
         }
 
+    }
+
+    private fun callPhone() {
+        val uri: Uri = Uri.parse("tel:4000000")
+        val intent = Intent(Intent.ACTION_DIAL)
+        intent.data = uri
+        startActivity(intent)
+    }
+
+    private fun showDialog() {
+        dialog?.apply {
+            if (isShowing) {
+                dismiss()
+            } else {
+                show()
+            }
+        }
     }
 
     override fun initData() {

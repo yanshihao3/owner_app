@@ -137,6 +137,7 @@ class ComplaintActivity : BaseNoModelActivity<AppActivityComplaintBinding>() {
         if (requestCode === REQUEST_LIST_CODE && resultCode === RESULT_OK && data != null) {
             val pathList: ArrayList<String>? = data.getStringArrayListExtra("result")
             if (pathList != null) {
+                listData.clear()
                 for (path in pathList) {
                     listData.add(0, ImageInfo(false, path))
                 }

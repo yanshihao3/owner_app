@@ -76,8 +76,8 @@ class MainActivity : BaseActivity<MainViewModel, AppActivityMainBinding>() {
 
 
     override fun initData() {
-        setLoadSir(mDataBind.container)
-        mViewModel.load()
+//        setLoadSir(mDataBind.container)
+//        mViewModel.load()
     }
 
     override fun onRetryBtnClick() {

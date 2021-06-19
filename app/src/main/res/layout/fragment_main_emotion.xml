@@ -19,7 +19,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#eee"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingLeft="8dp"
@@ -34,7 +33,7 @@
                 android:layout_height="28dp"
                 android:clickable="true"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/ic_plus"
+                android:src="@mipmap/app_housekeeper_icon_audio"
                 android:visibility="visible" />
 
             <LinearLayout
@@ -44,7 +43,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/shape_bg_reply_edittext"
+                android:background="@drawable/app_express_serach_bg"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -52,8 +51,11 @@
                     android:id="@+id/bar_edit_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginEnd="13dp"
                     android:layout_weight="1"
                     android:background="#0000"
+                    android:hint="请输入"
                     android:maxLines="3"
                     android:minHeight="36dp"
                     android:textSize="16sp" />

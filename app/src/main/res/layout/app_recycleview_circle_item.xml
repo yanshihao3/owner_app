@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/photo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/app_house_photo" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="向叶星"
+            android:textColor="#ff333333"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toRightOf="@id/photo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="小区名称名称  2020/06/14 17:22"
+            android:textColor="#ff999999"
+            android:textSize="10sp"
+            app:layout_constraintLeft_toRightOf="@id/photo"
+            app:layout_constraintTop_toBottomOf="@id/name" />
+
+
+        <com.ctetin.expandabletextviewlibrary.ExpandableTextView
+            android:id="@+id/news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:lineSpacingExtra="4dp"
+            android:textSize="12sp"
+            app:ep_contract_color="@color/bottom_select"
+            app:ep_contract_text="收回"
+            app:ep_expand_color="@color/bottom_select"
+            app:ep_expand_text="全文"
+            app:ep_max_line="3"
+            app:ep_need_always_showright="true"
+            app:ep_need_animation="true"
+            app:ep_need_contract="true"
+            app:ep_need_expand="true"
+            app:layout_constraintTop_toTopOf="@id/time" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image1"
+            android:layout_width="160dp"
+            android:layout_height="110dp"
+            android:scaleType="fitXY"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/news" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image2"
+            android:layout_width="160dp"
+            android:layout_height="110dp"
+            android:layout_marginEnd="16dp"
+            android:scaleType="fitXY"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/news" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

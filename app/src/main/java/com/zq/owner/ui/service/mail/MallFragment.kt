@@ -18,6 +18,9 @@ class MallFragment : BaseLazyFragment<ViewModel, AppFragmentMallBinding>() {
         GoodsModel(),
         GoodsModel(),
         GoodsModel(),
+        GoodsModel(),
+        GoodsModel(),
+        GoodsModel(),
         GoodsModel()
     )
 

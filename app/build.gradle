@@ -67,6 +67,7 @@ dependencies {
     //图片展示库
     implementation 'com.github.wanglu1209:PhotoViewer:0.50'
 
+
     // CameraX core library using the camera2 implementation
     def camerax_version = "1.1.0-alpha05"
     // The following line is optional, as the core library is included indirectly by camera-camera2
