@@ -1,5 +1,6 @@
 package com.zq.owner.ui.user
 
+import com.gyf.immersionbar.ImmersionBar
 import com.zq.base.fragment.BaseLazyFragment
 import com.zq.owner.R
 import com.zq.owner.databinding.AppFragmentUserBinding
@@ -28,4 +29,5 @@ class UserFragment : BaseLazyFragment<UserViewModel, AppFragmentUserBinding>() {
 
     override fun onFragmentFirstVisible() {
     }
+
 }

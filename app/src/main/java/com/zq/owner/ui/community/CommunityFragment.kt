@@ -17,6 +17,7 @@ import com.zq.owner.ui.community.report.ReportActivity
 import com.zq.owner.ui.community.report.ReportRecordActivity
 import com.zq.owner.ui.community.service.ServiceTelephoneActivity
 import com.zq.owner.ui.community.viewmodel.CommunityViewModel
+import com.zq.owner.ui.service.mail.MallActivity
 
 
 class CommunityFragment : BaseLazyFragment<CommunityViewModel, AppFragmentCommunityBinding>() {
@@ -51,30 +52,22 @@ class CommunityFragment : BaseLazyFragment<CommunityViewModel, AppFragmentCommun
             startActivity(Intent(context, ComplaintActivity::class.java))
         }
 
-        //测试登录
-        mDataBind.itemCommunity.setOnClickListener {
-            CC.obtainBuilder("ComponentUser")
-                .setActionName("login")
-                .build()
-                .callAsyncCallbackOnMainThread { cc, result ->
-                    Log.e("tag", "initView: ${result.toString()}")
-                }
-        }
-        mDataBind.itemPropertyPay.setOnClickListener {
-            startActivity(Intent(context, PayActivity::class.java))
-        }
-
-//        //测试人脸认证
-//        mDataBind.itemHouse.setOnClickListener {
-//
-//            val string = SharedPreferencesUtils.init(mContext)
-//                .getString("face", "")
-//            if (string != "") {
-//                startActivity(Intent(context, FaceResultActivity::class.java))
-//            } else {
-//                startActivity(Intent(context, FaceActivity::class.java))
-//            }
+//        //测试登录
+//        mDataBind.itemCommunity.setOnClickListener {
+//            CC.obtainBuilder("ComponentUser")
+//                .setActionName("login")
+//                .build()
+//                .callAsyncCallbackOnMainThread { cc, result ->
+//                    Log.e("tag", "initView: ${result.toString()}")
+//                }
 //        }
+//        mDataBind.itemPropertyPay.setOnClickListener {
+//            startActivity(Intent(context, PayActivity::class.java))
+//        }
+
+        mDataBind.itemCommunity.setOnClickListener {
+            startActivity(Intent(context, MallActivity::class.java)) //社区优先
+        }
 
         //我的房屋
         mDataBind.itemHouse.setOnClickListener {

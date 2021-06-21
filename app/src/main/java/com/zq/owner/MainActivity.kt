@@ -1,10 +1,11 @@
 package com.zq.owner
 
+import android.view.KeyEvent
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import com.hjq.toast.ToastUtils
 import com.zq.base.activity.BaseActivity
 import com.zq.owner.databinding.AppActivityMainBinding
 import com.zq.owner.ui.community.CommunityFragment
@@ -14,6 +15,7 @@ import com.zq.owner.ui.service.ServiceFragment
 import com.zq.owner.ui.user.UserFragment
 import com.zq.owner.viewmodel.MainViewModel
 import q.rorbin.badgeview.QBadgeView
+import kotlin.system.exitProcess
 
 
 class MainActivity : BaseActivity<MainViewModel, AppActivityMainBinding>() {
@@ -115,4 +117,24 @@ class MainActivity : BaseActivity<MainViewModel, AppActivityMainBinding>() {
         }
     }
 
+    private var exitTime: Long = 0 //退出activity计时
+
+    //双击退出app事件
+    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.action == KeyEvent.ACTION_DOWN) {
+            if (System.currentTimeMillis() - exitTime > 2000) {
+                try {
+                    ToastUtils.show("再按一次返回键确认退出")
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+                exitTime = System.currentTimeMillis()
+            } else {
+                finish()
+                exitProcess(0)
+            }
+            return false
+        }
+        return super.onKeyDown(keyCode, event)
+    }
 }

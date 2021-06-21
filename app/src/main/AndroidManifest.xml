@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 读取sd卡 -->
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <uses-feature android:name="android.hardware.camera.any" />
 
@@ -22,7 +23,16 @@
         android:theme="@style/Theme.Mvvm"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ui.service.circle.CircleActivity"></activity>
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.service.circle.CircleActivity" />
         <activity android:name=".ui.service.visitor.VisitorActivity" />
         <activity android:name=".ui.service.household.HouseholdActivity" />
         <activity android:name=".ui.service.live.LiveActivity" />
@@ -48,11 +58,7 @@
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustPan">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <provider

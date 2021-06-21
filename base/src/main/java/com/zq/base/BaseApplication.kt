@@ -2,6 +2,7 @@ package com.zq.base
 
 import android.app.Application
 import com.billy.cc.core.component.CC
+import com.hjq.permissions.XXPermissions
 import com.hjq.toast.ToastUtils
 import com.kingja.loadsir.core.LoadSir
 import com.zq.base.loadsir.*
@@ -34,7 +35,7 @@ open class BaseApplication : Application() {
             .commit()
 
         ToastUtils.init(this, ToastStyle())
-
+        XXPermissions.setScopedStorage(true)
 
     }
 
