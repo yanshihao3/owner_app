@@ -1,6 +1,8 @@
 ext.mainApp = true  //设置为true，表示此module为主app module，一直以application方式编译
 apply from: rootProject.file('cc-settings.gradle')
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
 
 def releaseTime() {
     return new Date().format("yyyy-MM-dd")

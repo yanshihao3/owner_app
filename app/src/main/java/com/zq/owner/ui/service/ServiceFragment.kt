@@ -41,6 +41,33 @@ import com.zq.owner.ui.service.visitor.VisitorActivity
 class ServiceFragment : BaseLazyFragment<ServiceViewModel, AppFragmentServiceBinding>() {
     override val layoutId: Int
         get() = R.layout.app_fragment_service
+
+
+    private val image1 = arrayOf(
+        R.mipmap.app_icon_item_identity,
+        R.mipmap.app_icon_item_pass,
+        R.mipmap.app_icon_item_prove,
+        R.mipmap.app_icon_item_house,
+        R.mipmap.app_icon_item_household,
+        R.mipmap.app_icon_item_visitor,
+        R.mipmap.app_icon_item_property_pay,
+        R.mipmap.app_icon_item_parking,
+        R.mipmap.app_icon_item_repair,
+        R.mipmap.app_icon_item_keeper,
+        R.mipmap.app_icon_item_service,
+        R.mipmap.app_icon_item_complaint,
+        R.mipmap.app_icon_item_call_phone,
+        R.mipmap.app_icon_item_queestionnaire
+    )
+    private val image2 = arrayOf(
+        R.mipmap.app_icon_item_community,
+        R.mipmap.app_icon_item_circle,
+        R.mipmap.app_icon_item_express,
+        R.mipmap.app_icon_item_cloud_pay,
+        R.mipmap.app_icon_item_cost,
+        R.mipmap.app_icon_item_card
+    )
+
     private val title1 = arrayOf<String>(
         "身份卡", "旅行条", "居住证明", "我的房屋", "住户管理", "车位缴费",
         "访客邀请", "物业缴费", "报事报修", "投诉建议", "专属管家", "投诉热线", "服务电话", "问卷调查"
@@ -54,8 +81,8 @@ class ServiceFragment : BaseLazyFragment<ServiceViewModel, AppFragmentServiceBin
 
     private val dataList2 = mutableListOf<MenuItem>()
 
-    private val layoutManager1 by lazy { GridLayoutManager(mContext, 5) }
-    private val layoutManager2 by lazy { GridLayoutManager(mContext, 5) }
+    private val layoutManager1 by lazy { GridLayoutManager(mContext, 4) }
+    private val layoutManager2 by lazy { GridLayoutManager(mContext, 4) }
 
     private val adapter1 by lazy { MenuAdapter() }
     private val adapter2 by lazy { MenuAdapter() }
@@ -66,12 +93,12 @@ class ServiceFragment : BaseLazyFragment<ServiceViewModel, AppFragmentServiceBin
     }
 
     override fun onFragmentFirstVisible() {
-        for (title in title1) {
-            dataList1.add(MenuItem("", title))
+        for ((index, title) in title1.withIndex()) {
+            dataList1.add(MenuItem(image1[index], title))
         }
 
-        for (title in title2) {
-            dataList2.add(MenuItem("", title))
+        for ((index, title) in title2.withIndex()) {
+            dataList2.add(MenuItem(image2[index], title))
         }
         adapter1.data = dataList1
         adapter2.data = dataList2

@@ -86,7 +86,7 @@
                     app:layout_constraintEnd_toStartOf="@+id/item_visitor"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:menu_icon="@mipmap/ic_launcher"
+                    app:menu_icon="@mipmap/app_icon_item_house"
                     app:menu_title="我的房屋" />
 
 
@@ -98,7 +98,7 @@
                     app:layout_constraintRight_toLeftOf="@+id/item_property_pay"
                     app:layout_constraintStart_toEndOf="@+id/item_house"
                     app:layout_constraintTop_toTopOf="@+id/item_house"
-                    app:menu_icon="@mipmap/ic_launcher"
+                    app:menu_icon="@mipmap/app_icon_item_visitor"
                     app:menu_title="访客邀请" />
 
 
@@ -110,7 +110,7 @@
                     app:layout_constraintRight_toLeftOf="@+id/item_cloud_pay"
                     app:layout_constraintStart_toEndOf="@+id/item_visitor"
                     app:layout_constraintTop_toTopOf="@+id/item_visitor"
-                    app:menu_icon="@mipmap/ic_launcher"
+                    app:menu_icon="@mipmap/app_icon_item_property_pay"
                     app:menu_title="物业缴费" />
 
                 <com.zq.owner.view.MenuItemView
@@ -121,7 +121,7 @@
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/item_property_pay"
                     app:layout_constraintTop_toTopOf="@+id/item_property_pay"
-                    app:menu_icon="@mipmap/ic_launcher"
+                    app:menu_icon="@mipmap/app_icon_item_cloud_pay"
                     app:menu_title="云缴费" />
 
                 <com.zq.owner.view.MenuItemView
@@ -132,7 +132,7 @@
                     app:layout_constraintEnd_toStartOf="@+id/item_visitor"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/item_house"
-                    app:menu_icon="@mipmap/ic_launcher"
+                    app:menu_icon="@mipmap/app_icon_item_community"
                     app:menu_title="社区优选" />
 
                 <com.zq.owner.view.MenuItemView
@@ -144,7 +144,7 @@
                     app:layout_constraintRight_toLeftOf="@+id/item_complaint"
                     app:layout_constraintStart_toEndOf="@+id/item_community"
                     app:layout_constraintTop_toBottomOf="@id/item_house"
-                    app:menu_icon="@mipmap/ic_launcher"
+                    app:menu_icon="@mipmap/app_icon_item_repair"
                     app:menu_title="报事报修" />
 
                 <com.zq.owner.view.MenuItemView
@@ -156,7 +156,7 @@
                     app:layout_constraintRight_toLeftOf="@+id/item_service"
                     app:layout_constraintStart_toEndOf="@+id/item_repair"
                     app:layout_constraintTop_toBottomOf="@id/item_house"
-                    app:menu_icon="@mipmap/ic_launcher"
+                    app:menu_icon="@mipmap/app_icon_item_complaint"
                     app:menu_title="投诉建议" />
 
                 <com.zq.owner.view.MenuItemView
@@ -168,7 +168,7 @@
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/item_complaint"
                     app:layout_constraintTop_toBottomOf="@id/item_house"
-                    app:menu_icon="@mipmap/ic_launcher"
+                    app:menu_icon="@mipmap/app_icon_item_service"
                     app:menu_title="服务电话" />
 
                 <androidx.cardview.widget.CardView

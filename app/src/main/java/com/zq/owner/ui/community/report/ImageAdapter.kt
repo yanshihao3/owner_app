@@ -42,7 +42,7 @@ class ImageAdapter :
         imageVIew.layoutParams.width = width
         imageVIew.layoutParams.height = width
         if (item.isShowAdd) {
-            imageVIew.setImageResource(R.mipmap.ic_launcher)
+            imageVIew.setImageResource(R.mipmap.app_icon_add_image)
         } else {
             imageVIew.load(FileUtils.getImageContentUri(context, item.url))
         }
