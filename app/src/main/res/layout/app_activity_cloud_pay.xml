@@ -25,54 +25,113 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.zq.owner.view.MenuItemView
+        <LinearLayout
             android:id="@+id/item_heating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:clipChildren="false"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
             app:layout_constraintEnd_toStartOf="@+id/item_gas"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
-            app:menu_icon="@mipmap/ic_launcher"
-            app:menu_title="供暖费" />
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/app_icon_item_heating" />
 
-        <com.zq.owner.view.MenuItemView
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="供暖费"
+                android:textColor="#ff333333"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/item_gas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toStartOf="@+id/item_cable_tv"
-            app:layout_constraintRight_toLeftOf="@+id/item_cable_tv"
-            app:layout_constraintStart_toEndOf="@+id/item_heating"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
-            app:menu_icon="@mipmap/ic_launcher"
-            app:menu_title="燃气费" />
-
-
-        <com.zq.owner.view.MenuItemView
-            android:id="@+id/item_cable_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
             app:layout_constraintEnd_toStartOf="@+id/item_water"
-            app:layout_constraintRight_toLeftOf="@+id/item_water"
-            app:layout_constraintStart_toEndOf="@+id/item_gas"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
-            app:menu_icon="@mipmap/ic_launcher"
-            app:menu_title="有线电视" />
+            app:layout_constraintStart_toEndOf="@+id/item_heating"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-        <com.zq.owner.view.MenuItemView
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/app_icon_item_gas" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="燃气费"
+                android:textColor="#ff333333"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/item_water"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/item_cable_tv"
+            app:layout_constraintStart_toEndOf="@+id/item_gas"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/app_icon_item_water" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="水费"
+                android:textColor="#ff333333"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/item_cable_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/item_cable_tv"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
-            app:menu_icon="@mipmap/ic_launcher"
-            app:menu_title="水费" />
+            app:layout_constraintStart_toEndOf="@+id/item_water"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/app_icon_item_tv" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="有线电视"
+                android:textColor="#ff333333"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
