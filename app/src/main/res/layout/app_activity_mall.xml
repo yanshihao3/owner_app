@@ -61,7 +61,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:layout_weight="1"
-                            app:menu_icon="@mipmap/ic_launcher"
+                            android:gravity="center_horizontal"
+                            app:menu_icon="@mipmap/app_icon_community_fresh"
                             app:menu_title="社区生鲜" />
 
 
@@ -70,7 +71,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:layout_weight="1"
-                            app:menu_icon="@mipmap/ic_launcher"
+                            android:gravity="center_horizontal"
+                            app:menu_icon="@mipmap/app_icon_community_group"
                             app:menu_title="社区团购" />
 
                         <com.zq.owner.view.MenuItemView
@@ -78,7 +80,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:layout_weight="1"
-                            app:menu_icon="@mipmap/ic_launcher"
+                            android:gravity="center_horizontal"
+                            app:menu_icon="@mipmap/app_icon_community_service"
                             app:menu_title="社区服务" />
 
 
@@ -87,7 +90,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:layout_weight="1"
-                            app:menu_icon="@mipmap/ic_launcher"
+                            android:gravity="center_horizontal"
+                            app:menu_icon="@mipmap/app_icon_community_optimization"
                             app:menu_title="社区优选" />
 
                     </LinearLayout>
