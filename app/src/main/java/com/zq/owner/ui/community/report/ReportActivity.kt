@@ -28,6 +28,7 @@ class ReportActivity : BaseActivity<ReportViewModel, AppActivityReportBinding>()
     private lateinit var pvTime: TimePickerView
     private lateinit var pvOptions: OptionsPickerView<String>
     private val gridLayoutManager by lazy {
+
         GridLayoutManager(mActivityContext, 3)
     }
     private val adapter by lazy {
